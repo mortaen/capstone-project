@@ -1,9 +1,9 @@
-import ProductCardList from './components/ProductCardList/ProductCardList'
+import Products from './components/ProductCardList/Products'
 
 function App({ productData }) {
   return (
     <>
-      <ProductCardList productData={productData} />
+      <Products productData={productData} />
     </>
   )
 }

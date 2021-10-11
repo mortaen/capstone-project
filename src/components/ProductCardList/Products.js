@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro'
 import ProductCard from '../ProductCard/ProductCard'
 
-function ProductCardList({ productData }) {
+function Products({ productData }) {
   return (
-    <CardList role="section">
+    <CardList>
       {productData.map(product => (
         <ProductCard
           name={product.name}
@@ -16,10 +16,11 @@ function ProductCardList({ productData }) {
   )
 }
 
-const CardList = styled.section`
+const CardList = styled.ul`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
+  padding: 0;
 `
 
-export default ProductCardList
+export default Products
