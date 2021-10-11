@@ -2,17 +2,17 @@ import styled from 'styled-components/macro'
 
 function ProductCard({ name, description, image }) {
   return (
-    <ProductCardWrapper>
-      <ProductImg src={image} alt="" />
+    <Wrapper>
+      <Image src={image} alt="" />
       <InfoWrapper>
         <h2>{name}</h2>
         <p>{description}</p>
       </InfoWrapper>
-    </ProductCardWrapper>
+    </Wrapper>
   )
 }
 
-const ProductCardWrapper = styled.div`
+const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-areas: 'image info';
@@ -27,7 +27,7 @@ const InfoWrapper = styled.div`
   grid-area: info;
 `
 
-const ProductImg = styled.img`
+const Image = styled.img`
   grid-area: image;
   width: 90%;
 `
