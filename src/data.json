@@ -16,11 +16,11 @@
       "Vitamin B12"
     ],
     "nutritionFacts": {
-      "Energie": "59 kcal",
-      "Fett": "3g",
-      "Kohlenhydrate": "6.5g",
-      "Ballaststoffe": "0.8g",
-      "Eiweiß": "1g"
+      "energy": "59 kcal",
+      "fats": "3g",
+      "carbohydrates": "6.5g",
+      "fiber": "0.8g",
+      "protein": "1g"
     },
     "stores": ["Rewe"],
     "image": "https://www.baristaproshop.com/images/big_prod3523.jpg",
@@ -46,11 +46,11 @@
       "Vitamin B12"
     ],
     "nutritionFacts": {
-      "Energie": "42 kcal",
-      "Fett": "2.3g",
-      "Kohlenhydrate": "0g",
-      "Ballaststoffe": "0.9g",
-      "Eiweiß": "4g"
+      "energy": "42 kcal",
+      "fats": "2.3g",
+      "carbohydrates": "0g",
+      "fiber": "0.9g",
+      "protein": "4g"
     },
     "stores": ["Rewe", "Lidl"],
     "image": "https://img.rewe-static.de/2708343/24930316_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
@@ -83,11 +83,11 @@
       "Vitamin B12"
     ],
     "nutritionFacts": {
-      "Energie": "224 kcal",
-      "Fett": "11g",
-      "Kohlenhydrate": "19g",
-      "Ballaststoffe": "6.4g",
-      "Eiweiß": "9g"
+      "energy": "224 kcal",
+      "fats": "11g",
+      "carbohydrates": "19g",
+      "fiber": "6.4g",
+      "protein": "9g"
     },
     "stores": ["Rewe", "Real"],
     "image": "https://img.rewe-static.de/8403429/30699050_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
