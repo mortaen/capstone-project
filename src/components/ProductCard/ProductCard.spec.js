@@ -10,7 +10,7 @@ describe('ProductCard', () => {
       />
     )
 
-    const image = screen.getByRole('img')
+    const image = screen.getByAltText('')
     expect(image).toBeInTheDocument()
 
     const header = screen.getByRole('heading')
