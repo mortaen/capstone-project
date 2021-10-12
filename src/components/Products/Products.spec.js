@@ -14,7 +14,7 @@ const exampleData = [
   },
 ]
 
-describe('ProductCardList', () => {
+describe('Products', () => {
   it('renders CardList element', () => {
     render(<Products productData={exampleData} />)
 

@@ -19,7 +19,6 @@ function Products({ productData }) {
 const CardList = styled.ul`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: auto;
   padding: 0;
 `
 
