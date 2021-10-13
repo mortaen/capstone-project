@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
+import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
 
@@ -72,6 +73,7 @@ function App({ initialData }) {
           <ProductForm onAddProduct={handleAddProduct} />
         </Route>
       </Switch>
+      <Navigation />
     </Router>
   )
 }
