@@ -6,7 +6,7 @@ import Products from './components/Products/Products'
 
 function App({ initialData }) {
   const [productData, setProductData] = useState(() => {
-    if (localStorage.getItem('productsLocalStorage')) {
+    if (localStorage.getItem('productsLocalStorage') !== "") {
       return JSON.parse(localStorage.getItem('productsLocalStorage'))
     } else {
       return initialData
