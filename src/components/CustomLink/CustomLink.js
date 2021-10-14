@@ -3,10 +3,10 @@ import styled from 'styled-components/macro'
 
 function CustomLink({ path, name, icon }) {
   return (
-    <>
+    <StyledLink to={path}>
       {icon}
-      <StyledLink to={path}>{name}</StyledLink>
-    </>
+      {name}
+    </StyledLink>
   )
 }
 const StyledLink = styled(Link)`
