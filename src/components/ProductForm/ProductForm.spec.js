@@ -52,9 +52,6 @@ describe('ProductForm', () => {
 
     const submitButton = screen.getByRole('button', { name: 'Submit' })
     expect(submitButton).toBeInTheDocument()
-
-    const buttons = screen.getAllByRole('button')
-    expect(buttons).toHaveLength(2)
   })
 
   it('calls function on submit', () => {
