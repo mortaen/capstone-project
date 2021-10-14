@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import BackButton from './BackButton'
 
 function ProductForm({ onAddProduct }) {
   return (
@@ -86,6 +87,7 @@ function ProductForm({ onAddProduct }) {
         </Label>
         <button>Submit</button>
       </Form>
+      <BackButton />
     </>
   )
 
