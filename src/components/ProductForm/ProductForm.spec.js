@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { MemoryRouter as Router } from 'react-router-dom'
 import ProductForm from './ProductForm'
 
 describe('ProductForm', () => {
   it('renders heading and form elements', () => {
-    render(<ProductForm />)
+    render(
+      <Router>
+        <ProductForm />
+      </Router>
+    )
 
     const nameInput = screen.getByLabelText('Product Name:')
     expect(nameInput).toBeInTheDocument()
@@ -45,15 +50,22 @@ describe('ProductForm', () => {
     const categoriesInput = screen.getByLabelText('Categories:')
     expect(categoriesInput).toBeInTheDocument()
 
-    const submitButton = screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: 'Submit' })
     expect(submitButton).toBeInTheDocument()
+
+    const buttons = screen.getAllByRole('button')
+    expect(buttons).toHaveLength(2)
   })
 
   it('calls function on submit', () => {
     const mockOnAddProduct = jest.fn()
-    render(<ProductForm onAddProduct={mockOnAddProduct} />)
+    render(
+      <Router>
+        <ProductForm onAddProduct={mockOnAddProduct} />
+      </Router>
+    )
 
-    const submitButton = screen.getByRole('button')
+    const submitButton = screen.getByRole('button', { name: 'Submit' })
     userEvent.click(submitButton)
     expect(mockOnAddProduct).toHaveBeenCalled()
   })
