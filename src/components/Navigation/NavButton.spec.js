@@ -13,12 +13,7 @@ describe('NavButton', () => {
   it('calls a function when button is clicked and navigation state is false', () => {
     const mockShowNavigation = jest.fn()
 
-    render(
-      <NavButton
-        showNavigation={mockShowNavigation}
-        navigation={false}
-      ></NavButton>
-    )
+    render(<NavButton showNavigation={mockShowNavigation} navigation={false} />)
 
     const button = screen.getByRole('button')
     userEvent.click(button)
@@ -28,12 +23,7 @@ describe('NavButton', () => {
   it('calls a function when button is clicked and navigation state is true', () => {
     const mockShowNavigation = jest.fn()
 
-    render(
-      <NavButton
-        showNavigation={mockShowNavigation}
-        navigation={true}
-      ></NavButton>
-    )
+    render(<NavButton showNavigation={mockShowNavigation} navigation={true} />)
 
     const button = screen.getByRole('button')
     userEvent.click(button)
