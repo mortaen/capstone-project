@@ -1,6 +1,7 @@
 import { AiOutlineHome } from 'react-icons/ai'
 import styled from 'styled-components/macro'
 import ProductCard from '../ProductCard/ProductCard'
+import AddItemButton from './AddItemButton'
 
 function Products({ productData }) {
   return (
@@ -8,6 +9,7 @@ function Products({ productData }) {
       <Heading>
         <AiOutlineHome /> Products
       </Heading>
+      <AddItemButton />
       <CardList>
         {productData.map(product => (
           <ProductCard
