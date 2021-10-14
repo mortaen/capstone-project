@@ -1,5 +1,6 @@
-import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineFileAdd, AiOutlineHome } from 'react-icons/ai'
 import styled from 'styled-components/macro'
+import CustomLink from '../CustomLink/CustomLink'
 import ProductCard from '../ProductCard/ProductCard'
 
 function Products({ productData }) {
@@ -8,6 +9,11 @@ function Products({ productData }) {
       <Heading>
         <AiOutlineHome /> Products
       </Heading>
+      <CustomLink
+        path="/product-form"
+        name="Add Item"
+        icon={<AiOutlineFileAdd />}
+      />
       <CardList>
         {productData.map(product => (
           <ProductCard

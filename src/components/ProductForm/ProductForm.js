@@ -1,4 +1,6 @@
+import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
+import CustomLink from '../CustomLink/CustomLink'
 
 function ProductForm({ onAddProduct }) {
   return (
@@ -86,6 +88,11 @@ function ProductForm({ onAddProduct }) {
         </Label>
         <button>Submit</button>
       </Form>
+      <CustomLink
+        path="/"
+        name="Back to Products"
+        icon={<MdNavigateBefore />}
+      />
     </>
   )
 
