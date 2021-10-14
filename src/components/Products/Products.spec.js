@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Products from './Products'
+import { MemoryRouter as Router } from 'react-router-dom'
 
 const exampleData = [
   {
@@ -16,7 +17,11 @@ const exampleData = [
 
 describe('Products', () => {
   it('renders CardList element', () => {
-    render(<Products productData={exampleData} />)
+    render(
+      <Router>
+        <Products productData={exampleData} />
+      </Router>
+    )
 
     const products = screen.getByRole('list')
     expect(products).toBeInTheDocument()
