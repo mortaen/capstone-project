@@ -16,9 +16,9 @@ function Navigation() {
       <NavButton showNavigation={showNavigation} navigation={navigation} />
       <Nav navigation={navigation}>
         <NavButton showNavigation={showNavigation} navigation={navigation} />
-        {NavData.map((item, index) => {
+        {NavData.map((item, id) => {
           return (
-            <NavItem key={index}>
+            <NavItem key={id}>
               <Link to={item.path}>
                 {item.icon}
                 <span>{item.title}</span>
