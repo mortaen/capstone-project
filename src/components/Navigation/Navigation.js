@@ -21,7 +21,7 @@ function Navigation() {
             <NavItem key={id}>
               <Link to={item.path}>
                 {item.icon}
-                <span>{item.title}</span>
+                <Title>{item.title}</Title>
               </Link>
             </NavItem>
           )
@@ -32,14 +32,8 @@ function Navigation() {
 }
 
 const Nav = styled.nav`
-  background: #c9ccd3;
-  background-image: linear-gradient(
-    -180deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-  background-blend-mode: lighten;
-  background-blend-mode: multiply, multiply;
+  background-color: #1f2933;
+  color: white;
   width: 50%;
   height: 100vh;
   display: flex;
@@ -52,7 +46,6 @@ const Nav = styled.nav`
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 5px;
-  opacity: 0.75;
   ${({ navigation }) =>
     navigation &&
     `
@@ -62,6 +55,10 @@ const Nav = styled.nav`
 
 const NavItem = styled.li`
   padding: 5px;
+`
+
+const Title = styled.span`
+  color: white;
 `
 
 export default Navigation
