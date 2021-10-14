@@ -46,7 +46,7 @@ const Nav = styled.nav`
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -50%;
   transition: 850ms;
   list-style-type: none;
   border-top-left-radius: 10px;
