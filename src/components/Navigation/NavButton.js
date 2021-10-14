@@ -4,12 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 function NavButton({ showNavigation, navigation }) {
   return (
-    <Button
-      aria-label="toggle navigation menu"
-      onClick={() => {
-        showNavigation()
-      }}
-    >
+    <Button aria-label="toggle navigation menu" onClick={showNavigation}>
       {navigation ? <AiOutlineClose /> : <FaBars />}
     </Button>
   )
