@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
@@ -129,6 +130,7 @@ function ProductForm({ onAddProduct }) {
       fiber: fiber.value,
       protein: protein.value,
       categories: categories.value,
+      id: nanoid(),
     })
 
     form.reset()
