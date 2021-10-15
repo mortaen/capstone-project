@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
+import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
@@ -28,6 +29,7 @@ function App({ initialData }) {
     protein,
     categories,
     price,
+    id,
   }) {
     const ingredientsArray = ingredients.split(',').map(item => item.trim())
 
@@ -55,6 +57,7 @@ function App({ initialData }) {
         nutritionFacts: nutritionFactsObject,
         categories: categoriesArray,
         price: price,
+        id: id,
       },
     ]
     setProductData(addProduct)
@@ -72,6 +75,10 @@ function App({ initialData }) {
         <Route exact path="/product-form">
           <ProductForm onAddProduct={handleAddProduct} />
         </Route>
+        <Route exact path="/product-details/:id">
+          <ProductRoute productData={productData} />
+        </Route>
+        <Route>404 NOT FOUND</Route>
       </Switch>
       <Navigation />
     </Router>
