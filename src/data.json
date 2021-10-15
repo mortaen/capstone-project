@@ -1,6 +1,7 @@
 [
   {
     "name": "Oatly Haferdrink Barista Edition",
+    "id": "1",
     "brand": "Oatly",
     "description": "Haferdrink Barista-Edition, 100% pflanzlich, perfekt zum Aufschäumen, ideal für Kaffee und Tee. Kein GMO.",
     "ingredients": [
@@ -29,6 +30,7 @@
   },
   {
     "name": "Alpro Soja-Joghurt",
+    "id": "2",
     "brand": "Alpro",
     "description": "Die Alpro Soja-Joghurtalternative Natur Ungesüßt ist zuckerfrei und dank des milden Geschmacks vielseitig einsetzbar.",
     "ingredients": [
@@ -59,6 +61,7 @@
   },
   {
     "name": "Beflügel-Nuggets",
+    "id": "3",
     "brand": "The Vegetarian Butcher",
     "description": "Vegane panierte Nuggets auf Sojabasis.",
     "ingredients": [
