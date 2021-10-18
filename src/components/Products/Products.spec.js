@@ -15,11 +15,23 @@ const exampleData = [
   },
 ]
 
+const exampleFilterCategories = [
+  'plant milk',
+  'plant yoghurt',
+  'meat alternative',
+]
+
 describe('Products', () => {
+  const mockOnCategoryClick = jest.fn()
+
   it('renders CardList element', () => {
     render(
       <Router>
-        <Products shownData={exampleData} />
+        <Products
+          shownData={exampleData}
+          onCategoryClick={mockOnCategoryClick}
+          filterCategories={exampleFilterCategories}
+        />
       </Router>
     )
 

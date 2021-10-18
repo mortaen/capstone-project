@@ -1,13 +1,16 @@
 import { render, screen } from '@testing-library/react'
 import ProductCard from './ProductCard'
+import { MemoryRouter as Router } from 'react-router-dom'
 
 describe('ProductCard', () => {
   it('renders product card elements', () => {
     render(
-      <ProductCard
-        name="Oatly Haferdrink Barista Edition"
-        description="Haferdrink Barista-Edition, 100% pflanzlich, perfekt zum Aufschäumen, ideal für Kaffee und Tee. Kein GMO."
-      />
+      <Router>
+        <ProductCard
+          name="Oatly Haferdrink Barista Edition"
+          description="Haferdrink Barista-Edition, 100% pflanzlich, perfekt zum Aufschäumen, ideal für Kaffee und Tee. Kein GMO."
+        />
+      </Router>
     )
 
     const image = screen.getByAltText('')

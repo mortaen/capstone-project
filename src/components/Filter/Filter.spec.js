@@ -4,9 +4,16 @@ import Filter from './Filter'
 
 describe('Filter', () => {
   const mockOnCategoryClick = jest.fn()
+  const exampleFilterCategories = [
+    'plant milk',
+    'plant yoghurt',
+    'meat alternative',
+  ]
 
   it('renders only a button on load', () => {
-    render(<Filter activeCategory={''} />)
+    render(
+      <Filter activeCategory={''} filterCategories={exampleFilterCategories} />
+    )
 
     const button = screen.getByLabelText('show filters')
     expect(button).toBeInTheDocument()
@@ -16,7 +23,13 @@ describe('Filter', () => {
   })
 
   it('renders a list after clicking the button', () => {
-    render(<Filter onCategoryClick={mockOnCategoryClick} activeCategory={''} />)
+    render(
+      <Filter
+        onCategoryClick={mockOnCategoryClick}
+        activeCategory={''}
+        filterCategories={exampleFilterCategories}
+      />
+    )
 
     const button = screen.getByLabelText('show filters')
     expect(button).toBeInTheDocument()
@@ -31,6 +44,7 @@ describe('Filter', () => {
       <Filter
         onCategoryClick={mockOnCategoryClick}
         activeCategory={'plant milk'}
+        filterCategories={exampleFilterCategories}
       />
     )
 
