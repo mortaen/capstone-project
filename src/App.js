@@ -15,6 +15,16 @@ function App({ initialData }) {
     }
   })
 
+  const initialCategories = ['plant milk', 'plant yoghurt', 'meat alternative']
+
+  const [filterCategories, setFilterCategories] = useState(() => {
+    if (localStorage.getItem('categoriesLocalStorage')) {
+      return JSON.parse(localStorage.getItem('categoriesLocalStorage'))
+    } else {
+      return initialCategories
+    }
+  })
+
   const [activeCategory, setActiveCategory] = useState('')
 
   function handleCategoryClick(category) {
@@ -28,6 +38,22 @@ function App({ initialData }) {
     )
   } else {
     shownData = productData
+  }
+
+  function handleAddCategories({ categories }) {
+    const categoriesArray = categories.split(',').map(item => item.trim())
+    let newCategories = filterCategories
+
+    categoriesArray.forEach(function (category) {
+      if (!newCategories.includes(category)) {
+        newCategories.push(category)
+      }
+    })
+
+    setFilterCategories(newCategories)
+
+    const stringifiedValue = JSON.stringify(newCategories)
+    localStorage.setItem('categoriesLocalStorage', stringifiedValue)
   }
 
   function handleAddProduct({
@@ -89,10 +115,14 @@ function App({ initialData }) {
             shownData={shownData}
             onCategoryClick={handleCategoryClick}
             activeCategory={activeCategory}
+            filterCategories={filterCategories}
           />
         </Route>
         <Route exact path="/product-form">
-          <ProductForm onAddProduct={handleAddProduct} />
+          <ProductForm
+            onAddProduct={handleAddProduct}
+            onAddCategories={handleAddCategories}
+          />
         </Route>
         <Route exact path="/product-details/:id">
           <ProductRoute productData={productData} />
