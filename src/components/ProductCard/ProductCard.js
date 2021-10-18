@@ -1,21 +1,22 @@
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 function ProductCard({ name, description, image, id }) {
   const history = useHistory()
 
   return (
-    <Wrapper onClick={() => history.push(`/product-details/${id}`)}>
+    <StyledLink to={`/product-details/${id}`}>
       <Image src={image} alt="" />
       <InfoWrapper>
         <h2>{name}</h2>
         <p>{description}</p>
       </InfoWrapper>
-    </Wrapper>
+    </StyledLink>
   )
 }
 
-const Wrapper = styled.div`
+const StyledLink = styled(Link)`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-areas: 'image info';
@@ -23,6 +24,8 @@ const Wrapper = styled.div`
   border-radius: 10px;
   padding: 1rem;
   margin: 10px;
+  text-decoration: none;
+  color: inherit;
 `
 
 const InfoWrapper = styled.div`
