@@ -20,6 +20,7 @@ function Products({ productData }) {
             name={product.name}
             description={product.description}
             image={product.image}
+            id={product.id}
             key={product.name}
           />
         ))}

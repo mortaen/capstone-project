@@ -11,6 +11,7 @@ function CustomLink({ path, name, icon }) {
 }
 const StyledLink = styled(Link)`
   font-size: large;
+  text-decoration: none;
 `
 
 export default CustomLink

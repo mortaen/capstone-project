@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductForm from './ProductForm'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Component/ProductForm',
@@ -9,4 +10,6 @@ export default {
 const Template = args => <ProductForm {...args} />
 
 export const Form = Template.bind({})
-Form.args = {}
+Form.args = {
+  onAddProduct: action(add => console.log(add)),
+}

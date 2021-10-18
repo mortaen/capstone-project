@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+import { IconContext } from 'react-icons/lib'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
@@ -5,6 +7,9 @@ import CustomLink from '../CustomLink/CustomLink'
 function ProductForm({ onAddProduct }) {
   return (
     <>
+      <IconContext.Provider value={{ color: '#1f2933', size: '40px' }}>
+        <CustomLink path="/" name="" icon={<MdNavigateBefore />} />
+      </IconContext.Provider>
       <Heading>Add your product</Heading>
       <Form onSubmit={event => handleSubmit(event)}>
         <Label>
@@ -88,11 +93,6 @@ function ProductForm({ onAddProduct }) {
         </Label>
         <button>Submit</button>
       </Form>
-      <CustomLink
-        path="/"
-        name="Back to Products"
-        icon={<MdNavigateBefore />}
-      />
     </>
   )
 
@@ -129,6 +129,7 @@ function ProductForm({ onAddProduct }) {
       fiber: fiber.value,
       protein: protein.value,
       categories: categories.value,
+      id: nanoid(),
     })
 
     form.reset()
