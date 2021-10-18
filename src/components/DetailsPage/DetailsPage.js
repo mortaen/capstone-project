@@ -1,5 +1,4 @@
 import { MdNavigateBefore } from 'react-icons/md'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 
@@ -13,11 +12,9 @@ function DetailsPage({
   stores,
   categories,
   price,
-  id,
 }) {
   return (
     <>
-      <Link to={`/product-details/${id}`} />
       <Heading>{name}</Heading>
       <Image src={image} alt="" />
       <Description>{description}</Description>
