@@ -15,6 +15,21 @@ function App({ initialData }) {
     }
   })
 
+  const [activeCategory, setActiveCategory] = useState('')
+
+  function handleCategoryClick(category) {
+    setActiveCategory(category)
+  }
+
+  let shownData
+  if (activeCategory !== '') {
+    shownData = productData.filter(product =>
+      product.categories.includes(activeCategory)
+    )
+  } else {
+    shownData = productData
+  }
+
   function handleAddProduct({
     productName,
     brand,
@@ -70,7 +85,11 @@ function App({ initialData }) {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Products productData={productData} />
+          <Products
+            shownData={shownData}
+            onCategoryClick={handleCategoryClick}
+            activeCategory={activeCategory}
+          />
         </Route>
         <Route exact path="/product-form">
           <ProductForm onAddProduct={handleAddProduct} />
