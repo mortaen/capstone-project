@@ -1,3 +1,4 @@
+import { IconContext } from 'react-icons/lib'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
@@ -15,6 +16,9 @@ function DetailsPage({
 }) {
   return (
     <>
+      <IconContext.Provider value={{ color: '#1f2933', size: '40px' }}>
+        <CustomLink path="/" icon={<MdNavigateBefore />} />
+      </IconContext.Provider>
       <Heading>{name}</Heading>
       <Image src={image} alt="" />
       <Description>{description}</Description>
@@ -52,11 +56,6 @@ function DetailsPage({
           <Item key={index}>{category}</Item>
         ))}
       </Section>
-      <CustomLink
-        path="/"
-        name="Back to Products"
-        icon={<MdNavigateBefore />}
-      />
     </>
   )
 }
