@@ -4,7 +4,7 @@ import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 
-function ProductForm({ onAddProduct }) {
+function ProductForm({ onAddProduct, onAddCategories }) {
   return (
     <>
       <IconContext.Provider value={{ color: '#1f2933', size: '40px' }}>
@@ -131,6 +131,8 @@ function ProductForm({ onAddProduct }) {
       categories: categories.value,
       id: nanoid(),
     })
+
+    onAddCategories({ categories: categories.value })
 
     form.reset()
     productName.focus()

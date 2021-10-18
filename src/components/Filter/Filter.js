@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import FilterButton from './FilterButton'
-import { FilterCategories } from './FilterCategories'
 
-function Filter({ onCategoryClick, activeCategory }) {
+function Filter({ onCategoryClick, activeCategory, filterCategories }) {
   const [showFilters, setShowFilters] = useState(false)
 
   function showFilter() {
@@ -19,7 +18,7 @@ function Filter({ onCategoryClick, activeCategory }) {
         ) : (
           ''
         )}
-        {FilterCategories.map((item, index) => {
+        {filterCategories.map((item, index) => {
           return (
             <Item key={index} onClick={() => onCategoryClick(item)}>
               {item}

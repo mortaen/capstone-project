@@ -5,7 +5,12 @@ import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
 
-function Products({ shownData, onCategoryClick, activeCategory }) {
+function Products({
+  shownData,
+  onCategoryClick,
+  activeCategory,
+  filterCategories,
+}) {
   return (
     <>
       <Heading>
@@ -21,6 +26,7 @@ function Products({ shownData, onCategoryClick, activeCategory }) {
       <Filter
         onCategoryClick={onCategoryClick}
         activeCategory={activeCategory}
+        filterCategories={filterCategories}
       />
       <CardList>
         {shownData.map(product => (
