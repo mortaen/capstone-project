@@ -19,7 +19,7 @@ describe('Products', () => {
   it('renders CardList element', () => {
     render(
       <Router>
-        <Products productData={exampleData} />
+        <Products shownData={exampleData} />
       </Router>
     )
 
