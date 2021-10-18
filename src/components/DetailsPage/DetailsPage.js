@@ -24,8 +24,8 @@ function DetailsPage({
 
       <Section>
         <Subheading>Zutaten</Subheading>
-        {ingredients.map(ingredient => (
-          <Item>{ingredient}</Item>
+        {ingredients.map((ingredient, index) => (
+          <Item key={index}>{ingredient}</Item>
         ))}
       </Section>
 
@@ -41,15 +41,15 @@ function DetailsPage({
 
       <Section>
         <Subheading>Läden</Subheading>
-        {stores.map(store => (
-          <Item>{store}</Item>
+        {stores.map((store, index) => (
+          <Item key={index}>{store}</Item>
         ))}
       </Section>
 
       <Section>
         <Subheading>Kategorien</Subheading>
-        {categories.map(category => (
-          <Item>{category}</Item>
+        {categories.map((category, index) => (
+          <Item key={index}>{category}</Item>
         ))}
       </Section>
       <CustomLink
