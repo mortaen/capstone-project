@@ -9,7 +9,16 @@ export default {
 
 const Template = args => <Filter {...args} />
 
-export const example = Template.bind({})
-example.args = {
+export const WithoutActiveCategory = Template.bind({})
+WithoutActiveCategory.args = {
   onCategoryClick: action('filtered by category'),
+  filterCategories: ['plant milk', 'plant yoghurt', 'meat alternative'],
+  activeCategory: '',
+}
+
+export const WithActiveCategory = Template.bind({})
+WithActiveCategory.args = {
+  onCategoryClick: action('filtered by category'),
+  filterCategories: ['plant milk', 'plant yoghurt', 'meat alternative'],
+  activeCategory: 'plant milk',
 }
