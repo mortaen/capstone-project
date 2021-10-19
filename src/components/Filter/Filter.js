@@ -14,13 +14,18 @@ function Filter({ onCategoryClick, activeCategory, filterCategories }) {
       <FilterButton showFilter={showFilter} />
       <List showFilters={showFilters}>
         {activeCategory !== '' ? (
-          <Item onClick={() => onCategoryClick('')}>show all</Item>
+          <ShowAll onClick={() => onCategoryClick('')}>show all</ShowAll>
         ) : (
           ''
         )}
         {filterCategories.map((item, index) => {
           return (
-            <Item key={index} onClick={() => onCategoryClick(item)}>
+            <Item
+              activeCategory={activeCategory}
+              item={item}
+              key={index}
+              onClick={() => onCategoryClick(item)}
+            >
               {item}
             </Item>
           )
@@ -43,6 +48,23 @@ display: block;
 `
 
 const Item = styled.li`
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 35vw;
+  margin: 7px 0px;
+  ${({ activeCategory, item }) =>
+    activeCategory === item
+      ? `
+          background-color: white;
+          color: #1f2933;
+        `
+      : `
+          color: inherit;
+        `};
+`
+
+const ShowAll = styled.li`
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px;
