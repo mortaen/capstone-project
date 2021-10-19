@@ -5,6 +5,7 @@ import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
+import { InitialRatings } from './components/Review/InitialRatings'
 
 function App({ initialData }) {
   const [productData, setProductData] = useState(() => {
@@ -26,6 +27,29 @@ function App({ initialData }) {
   })
 
   const [activeCategory, setActiveCategory] = useState('')
+
+  const [ratings, setRatings] = useState(() => {
+    if (localStorage.getItem('ratingsLocalStorage')) {
+      return JSON.parse(localStorage.getItem('ratingsLocalStorage'))
+    } else {
+      return InitialRatings
+    }
+  })
+
+  function handleAddRating(value, id) {
+    const otherRatings = ratings.filter(item => item.id !== id)
+    const newRatings = [
+      ...otherRatings,
+      {
+        id: id,
+        rating: value,
+      },
+    ]
+
+    setRatings(newRatings)
+    const stringifiedValue = JSON.stringify(newRatings)
+    localStorage.setItem('ratingsLocalStorage', stringifiedValue)
+  }
 
   function handleCategoryClick(category) {
     setActiveCategory(category)
@@ -105,6 +129,8 @@ function App({ initialData }) {
 
     const stringifiedValue = JSON.stringify(addProduct)
     localStorage.setItem('productsLocalStorage', stringifiedValue)
+
+    handleAddRating(0, id)
   }
 
   return (
@@ -116,6 +142,8 @@ function App({ initialData }) {
             onCategoryClick={handleCategoryClick}
             activeCategory={activeCategory}
             filterCategories={filterCategories}
+            onAddRating={handleAddRating}
+            ratings={ratings}
           />
         </Route>
         <Route exact path="/product-form">
