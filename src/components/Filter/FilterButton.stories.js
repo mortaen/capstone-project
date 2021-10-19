@@ -9,4 +9,3 @@ export default {
 const Template = args => <FilterButton {...args} />
 
 export const button = Template.bind({})
-button.args = {}
