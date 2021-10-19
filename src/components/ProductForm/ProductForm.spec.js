@@ -54,16 +54,21 @@ describe('ProductForm', () => {
     expect(submitButton).toBeInTheDocument()
   })
 
-  it('calls function on submit', () => {
+  it('calls two functions on submit', () => {
     const mockOnAddProduct = jest.fn()
+    const mockOnAddCategories = jest.fn()
     render(
       <Router>
-        <ProductForm onAddProduct={mockOnAddProduct} />
+        <ProductForm
+          onAddProduct={mockOnAddProduct}
+          onAddCategories={mockOnAddCategories}
+        />
       </Router>
     )
 
     const submitButton = screen.getByRole('button', { name: 'Submit' })
     userEvent.click(submitButton)
     expect(mockOnAddProduct).toHaveBeenCalled()
+    expect(mockOnAddCategories).toHaveBeenCalled()
   })
 })

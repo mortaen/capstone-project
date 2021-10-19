@@ -16,13 +16,13 @@ function Navigation() {
       <NavButton showNavigation={showNavigation} navigation={navigation} />
       <Nav navigation={navigation}>
         <NavButton showNavigation={showNavigation} navigation={navigation} />
-        {NavData.map((item, id) => {
+        {NavData.map(item => {
           return (
-            <NavItem key={id}>
-              <Link to={item.path}>
+            <NavItem key={item.id}>
+              <StyledLink to={item.path}>
                 {item.icon}
                 <Title>{item.title}</Title>
-              </Link>
+              </StyledLink>
             </NavItem>
           )
         })}
@@ -55,6 +55,11 @@ const Nav = styled.nav`
 
 const NavItem = styled.li`
   padding: 5px;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `
 
 const Title = styled.span`

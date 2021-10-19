@@ -1,21 +1,35 @@
+import { IconContext } from 'react-icons'
 import { AiOutlineFileAdd, AiOutlineHome } from 'react-icons/ai'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
+import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
 
-function Products({ productData }) {
+function Products({
+  shownData,
+  onCategoryClick,
+  activeCategory,
+  filterCategories,
+}) {
   return (
     <>
       <Heading>
         <AiOutlineHome /> Products
       </Heading>
-      <CustomLink
-        path="/product-form"
-        name="Add Item"
-        icon={<AiOutlineFileAdd />}
+      <IconContext.Provider value={{ color: '#1f2933', size: '25px' }}>
+        <CustomLink
+          path="/product-form"
+          name="Add Item"
+          icon={<AiOutlineFileAdd />}
+        />
+      </IconContext.Provider>
+      <Filter
+        onCategoryClick={onCategoryClick}
+        activeCategory={activeCategory}
+        filterCategories={filterCategories}
       />
       <CardList>
-        {productData.map(product => (
+        {shownData.map(product => (
           <ProductCard
             name={product.name}
             description={product.description}
