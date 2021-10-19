@@ -10,6 +10,8 @@ function Products({
   onCategoryClick,
   activeCategory,
   filterCategories,
+  onAddRating,
+  ratings,
 }) {
   return (
     <>
@@ -36,6 +38,8 @@ function Products({
             image={product.image}
             id={product.id}
             key={product.name}
+            onAddRating={onAddRating}
+            ratings={ratings}
           />
         ))}
       </CardList>
