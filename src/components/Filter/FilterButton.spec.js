@@ -1,5 +1,4 @@
-import { screen } from '@testing-library/dom'
-import { render } from '@testing-library/react'
+import { screen, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import FilterButton from './FilterButton'
 
