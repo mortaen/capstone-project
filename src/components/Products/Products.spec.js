@@ -5,13 +5,11 @@ import { MemoryRouter as Router } from 'react-router-dom'
 const exampleData = [
   {
     name: 'Oatly Haferdrink Barista Edition',
+    id: '1',
     description:
       'Haferdrink Barista-Edition, 100% pflanzlich, perfekt zum Aufschäumen, ideal für Kaffee und Tee. Kein GMO.',
-  },
-  {
-    name: 'Alpro Soja-Joghurt',
-    description:
-      'Die Alpro Soja-Joghurtalternative Natur Ungesüßt ist zuckerfrei und dank des milden Geschmacks vielseitig einsetzbar.',
+    image: 'https://www.baristaproshop.com/images/big_prod3523.jpg',
+    categories: ['plant milk'],
   },
 ]
 
@@ -21,21 +19,32 @@ const exampleFilterCategories = [
   'meat alternative',
 ]
 
+const exampleRatings = [
+  {
+    id: '1',
+    rating: 4,
+  },
+]
+
 describe('Products', () => {
   const mockOnCategoryClick = jest.fn()
 
-  it('renders CardList element', () => {
+  it('renders CardList and page title', () => {
     render(
       <Router>
         <Products
           shownData={exampleData}
           onCategoryClick={mockOnCategoryClick}
           filterCategories={exampleFilterCategories}
+          ratings={exampleRatings}
         />
       </Router>
     )
 
     const products = screen.getByRole('list')
     expect(products).toBeInTheDocument()
+
+    const pageTitle = screen.getByText('Products')
+    expect(pageTitle).toBeInTheDocument()
   })
 })
