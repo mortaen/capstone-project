@@ -37,7 +37,7 @@ function Products({
             description={product.description}
             image={product.image}
             id={product.id}
-            key={product.name}
+            key={product.id}
             onAddRating={onAddRating}
             ratings={ratings}
           />
