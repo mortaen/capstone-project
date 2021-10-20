@@ -18,6 +18,7 @@ function Review({ id, onAddRating, ratings }) {
       {stars.map((_, index) => {
         return (
           <FaStar
+            aria-label="star"
             key={index}
             onClick={event => handleStarClick(event, index + 1)}
             color={currentRating > index ? '#ffcc33' : '#a9a9a9'}
