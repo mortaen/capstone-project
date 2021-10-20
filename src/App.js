@@ -5,7 +5,7 @@ import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
-import { InitialRatings } from './components/Review/InitialRatings'
+import { initialRatings } from './components/Review/initialRatings'
 
 function App({ initialData }) {
   const [productData, setProductData] = useState(() => {
@@ -32,7 +32,7 @@ function App({ initialData }) {
     if (localStorage.getItem('ratingsLocalStorage')) {
       return JSON.parse(localStorage.getItem('ratingsLocalStorage'))
     } else {
-      return InitialRatings
+      return initialRatings
     }
   })
 

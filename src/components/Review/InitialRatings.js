@@ -1,4 +1,4 @@
-export const InitialRatings = [
+export const initialRatings = [
   {
     id: '1',
     rating: 4,
