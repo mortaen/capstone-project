@@ -5,7 +5,7 @@ import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
-import { initialRatings } from './components/Review/InitialRatings'
+import { initialRatings } from './components/Review/initRatings'
 
 function App({ initialData }) {
   const [productData, setProductData] = useState(() => {
