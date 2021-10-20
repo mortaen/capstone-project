@@ -6,8 +6,16 @@ import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
 import { initialRatings } from './components/Review/initialRatings'
+import useCategories from './hooks/useCategories'
 
 function App({ initialData }) {
+  const {
+    filterCategories,
+    activeCategory,
+    handleCategoryClick,
+    handleAddCategories,
+  } = useCategories()
+
   const [productData, setProductData] = useState(() => {
     if (localStorage.getItem('productsLocalStorage')) {
       return JSON.parse(localStorage.getItem('productsLocalStorage'))
@@ -15,18 +23,6 @@ function App({ initialData }) {
       return initialData
     }
   })
-
-  const initialCategories = ['plant milk', 'plant yoghurt', 'meat alternative']
-
-  const [filterCategories, setFilterCategories] = useState(() => {
-    if (localStorage.getItem('categoriesLocalStorage')) {
-      return JSON.parse(localStorage.getItem('categoriesLocalStorage'))
-    } else {
-      return initialCategories
-    }
-  })
-
-  const [activeCategory, setActiveCategory] = useState('')
 
   const [ratings, setRatings] = useState(() => {
     if (localStorage.getItem('ratingsLocalStorage')) {
@@ -49,35 +45,6 @@ function App({ initialData }) {
     setRatings(newRatings)
     const stringifiedValue = JSON.stringify(newRatings)
     localStorage.setItem('ratingsLocalStorage', stringifiedValue)
-  }
-
-  function handleCategoryClick(category) {
-    setActiveCategory(category)
-  }
-
-  let shownData
-  if (activeCategory !== '') {
-    shownData = productData.filter(product =>
-      product.categories.includes(activeCategory)
-    )
-  } else {
-    shownData = productData
-  }
-
-  function handleAddCategories({ categories }) {
-    const categoriesArray = categories.split(',').map(item => item.trim())
-    let newCategories = filterCategories
-
-    categoriesArray.forEach(function (category) {
-      if (!newCategories.includes(category)) {
-        newCategories.push(category)
-      }
-    })
-
-    setFilterCategories(newCategories)
-
-    const stringifiedValue = JSON.stringify(newCategories)
-    localStorage.setItem('categoriesLocalStorage', stringifiedValue)
   }
 
   function handleAddProduct({
@@ -131,6 +98,15 @@ function App({ initialData }) {
     localStorage.setItem('productsLocalStorage', stringifiedValue)
 
     handleAddRating(0, id)
+  }
+
+  let shownData
+  if (activeCategory !== '') {
+    shownData = productData.filter(product =>
+      product.categories.includes(activeCategory)
+    )
+  } else {
+    shownData = productData
   }
 
   return (
