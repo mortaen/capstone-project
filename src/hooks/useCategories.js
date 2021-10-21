@@ -35,6 +35,7 @@ export default function useCategories() {
   return {
     filterCategories,
     activeCategory,
+    setActiveCategory,
     handleCategoryClick,
     handleAddCategories,
   }
