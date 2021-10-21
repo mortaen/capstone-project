@@ -4,14 +4,20 @@ import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
+import Search from '../Search/Search'
+import ShowAllButton from '../ShowAllButton/ShowAllButton'
 
 function Products({
   shownData,
   onCategoryClick,
   activeCategory,
+  setActiveCategory,
   filterCategories,
   onAddRating,
   ratings,
+  searchProducts,
+  searchQuery,
+  setSearchQuery,
 }) {
   return (
     <>
@@ -29,6 +35,15 @@ function Products({
         onCategoryClick={onCategoryClick}
         activeCategory={activeCategory}
         filterCategories={filterCategories}
+      />
+      <ShowAllButton
+        setSearchQuery={setSearchQuery}
+        setActiveCategory={setActiveCategory}
+      />
+      <Search
+        searchProducts={searchProducts}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
       />
       <CardList>
         {shownData.map(product => (
