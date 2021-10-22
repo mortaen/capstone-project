@@ -44,6 +44,12 @@ describe('Products', () => {
     const products = screen.getByRole('list')
     expect(products).toBeInTheDocument()
 
+    const filterButton = screen.getByRole('button', { name: 'show filters' })
+    expect(filterButton).toBeInTheDocument()
+
+    const showAllButton = screen.getByRole('button', { name: 'show all' })
+    expect(showAllButton).toBeInTheDocument()
+
     const pageTitle = screen.getByText('Products')
     expect(pageTitle).toBeInTheDocument()
   })
