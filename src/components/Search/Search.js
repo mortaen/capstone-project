@@ -4,18 +4,13 @@ import styled from 'styled-components/macro'
 function Search({ searchQuery, setSearchQuery }) {
   const history = useHistory()
 
-  function onSubmit(event) {
+  function handleSubmit(event) {
     history.push(`?q=${searchQuery}`)
     event.preventDefault()
   }
 
   return (
-    <form
-      action="/"
-      method="get"
-      autoComplete="off"
-      onSubmit={event => onSubmit(event)}
-    >
+    <form action="/" method="get" autoComplete="off" onSubmit={handleSubmit}>
       <label>
         <Span>Search bar</Span>
         <input

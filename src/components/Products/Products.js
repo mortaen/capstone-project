@@ -22,7 +22,7 @@ function Products({
 }) {
   const history = useHistory()
 
-  function showAllProducts() {
+  function handleShowAllProducts() {
     history.push('/')
     setActiveCategory('')
     setSearchQuery('')
@@ -45,7 +45,7 @@ function Products({
         activeCategory={activeCategory}
         filterCategories={filterCategories}
       />
-      <ShowAllButton showAllProducts={showAllProducts} />
+      <ShowAllButton onShowAllProducts={handleShowAllProducts} />
       <Search
         searchProducts={searchProducts}
         searchQuery={searchQuery}

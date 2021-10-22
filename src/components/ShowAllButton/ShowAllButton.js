@@ -1,3 +1,3 @@
-export default function ShowAllButton({ showAllProducts }) {
-  return <button onClick={showAllProducts}>show all</button>
+export default function ShowAllButton({ onShowAllProducts }) {
+  return <button onClick={onShowAllProducts}>show all</button>
 }

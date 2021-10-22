@@ -11,5 +11,5 @@ const Template = args => <ShowAllButton {...args} />
 
 export const button = Template.bind({})
 button.args = {
-  showAllProducts: action(click => console.log(click)),
+  onShowAllProducts: action(click => console.log(click)),
 }
