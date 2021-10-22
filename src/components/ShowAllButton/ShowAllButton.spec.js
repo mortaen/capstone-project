@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import ShowAllButton from './ShowAllButton'
 
 describe('ShowAllButton', () => {
-  const mockShowAllProducts = jest.fn()
+  const mockOnShowAllProducts = jest.fn()
 
   it('renders a button', () => {
     render(<ShowAllButton />)
@@ -13,10 +13,10 @@ describe('ShowAllButton', () => {
   })
 
   it('calls a function when the button is clicked', () => {
-    render(<ShowAllButton />)
+    render(<ShowAllButton onShowAllProducts={mockOnShowAllProducts} />)
 
     const button = screen.getByRole('button', { name: 'show all' })
     userEvent.click(button)
-    expect(mockShowAllProducts).toHaveBeenCalled
+    expect(mockOnShowAllProducts).toHaveBeenCalled()
   })
 })
