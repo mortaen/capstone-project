@@ -1,5 +1,6 @@
 import { IconContext } from 'react-icons'
 import { AiOutlineFileAdd, AiOutlineHome } from 'react-icons/ai'
+import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
@@ -19,6 +20,14 @@ function Products({
   searchQuery,
   setSearchQuery,
 }) {
+  const history = useHistory()
+
+  function showAllProducts() {
+    history.push('/')
+    setActiveCategory('')
+    setSearchQuery('')
+  }
+
   return (
     <>
       <Heading>
@@ -36,10 +45,7 @@ function Products({
         activeCategory={activeCategory}
         filterCategories={filterCategories}
       />
-      <ShowAllButton
-        setSearchQuery={setSearchQuery}
-        setActiveCategory={setActiveCategory}
-      />
+      <ShowAllButton showAllProducts={showAllProducts} />
       <Search
         searchProducts={searchProducts}
         searchQuery={searchQuery}

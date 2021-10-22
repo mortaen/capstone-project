@@ -1,13 +1,3 @@
-import { useHistory } from 'react-router'
-
-export default function ShowAllButton({ setActiveCategory, setSearchQuery }) {
-  const history = useHistory()
-
-  function showAllProducts() {
-    history.push('/')
-    setActiveCategory('')
-    setSearchQuery('')
-  }
-
+export default function ShowAllButton({ showAllProducts }) {
   return <button onClick={showAllProducts}>show all</button>
 }
