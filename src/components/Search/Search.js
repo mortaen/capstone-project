@@ -12,7 +12,7 @@ function Search({ searchQuery, onSearchInput }) {
   return (
     <form action="/" method="get" autoComplete="off" onSubmit={handleSubmit}>
       <label>
-        <Span>Search bar</Span>
+        <ScreenReaderOnly>Search bar</ScreenReaderOnly>
         <input
           value={searchQuery}
           onInput={e => onSearchInput(e.target.value)}
@@ -25,8 +25,15 @@ function Search({ searchQuery, onSearchInput }) {
   )
 }
 
-const Span = styled.span`
-  display: none;
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `
 
 export default Search
