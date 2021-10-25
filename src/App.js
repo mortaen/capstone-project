@@ -25,16 +25,16 @@ function App({ initialData }) {
     handleAddRating,
   })
 
-  const { searchQuery, setSearchQuery, searchProducts } = useSearch()
-
-  const searchResults = searchProducts(productData, searchQuery)
+  const { searchQuery, setSearchQuery, searchResults } = useSearch({
+    productData,
+  })
 
   let shownData
   if (activeCategory !== '') {
     shownData = productData.filter(product =>
       product.categories.includes(activeCategory)
     )
-  } else if (searchResults !== '') {
+  } else if (searchResults !== productData) {
     shownData = searchResults
   } else {
     shownData = productData
@@ -52,7 +52,6 @@ function App({ initialData }) {
             filterCategories={filterCategories}
             onAddRating={handleAddRating}
             ratings={ratings}
-            searchProducts={searchProducts}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
           />
