@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import filterArray from '../utils/filterArray'
+import filterString from '../utils/filterString'
 
 export default function useSearch({ productData }) {
   const { search } = window.location
@@ -8,34 +10,28 @@ export default function useSearch({ productData }) {
 
   let searchResults
   if (searchQuery !== '') {
-    const nameResults = productData.filter(product =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    const nameResults = filterString(productData, searchQuery, 'name')
+
+    const brandResults = filterString(productData, searchQuery, 'brand')
+
+    const descriptionResults = filterString(
+      productData,
+      searchQuery,
+      'description'
     )
 
-    const brandResults = productData.filter(product =>
-      product.brand.toLowerCase().includes(searchQuery.toLowerCase())
+    const ingredientsResults = filterArray(
+      productData,
+      searchQuery,
+      'ingredients'
     )
 
-    const descriptionResults = productData.filter(product =>
-      product.description.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+    const storesResults = filterArray(productData, searchQuery, 'stores')
 
-    const ingredientsResults = productData.filter(product =>
-      product.ingredients.some(
-        ingredient => ingredient.toLowerCase() === searchQuery.toLowerCase()
-      )
-    )
-
-    const storesResults = productData.filter(product =>
-      product.stores.some(
-        store => store.toLowerCase() === searchQuery.toLowerCase()
-      )
-    )
-
-    const categoriesResults = productData.filter(product =>
-      product.categories.some(
-        category => category.toLowerCase() === searchQuery.toLowerCase()
-      )
+    const categoriesResults = filterArray(
+      productData,
+      searchQuery,
+      'categories'
     )
 
     searchResults = [].concat(
