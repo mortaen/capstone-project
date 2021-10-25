@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import Search from './Search'
 
 describe('Search', () => {
-  const mockSetSearchQuery = jest.fn()
+  const mockOnSearchInput = jest.fn()
 
   it('renders a form with an input element and a button element', () => {
     render(<Search />)
@@ -16,10 +16,10 @@ describe('Search', () => {
   })
 
   it('calls a function when the user types something in the search field and the input value changes', () => {
-    render(<Search setSearchQuery={mockSetSearchQuery} />)
+    render(<Search onSearchInput={mockOnSearchInput} />)
 
     const inputEl = screen.getByLabelText('Search bar')
     userEvent.type(inputEl, 'a')
-    expect(mockSetSearchQuery).toHaveBeenCalled()
+    expect(mockOnSearchInput).toHaveBeenCalled()
   })
 })
