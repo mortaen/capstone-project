@@ -11,9 +11,11 @@ export default function useSearch({ productData }) {
     const nameResults = productData.filter(product =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
     )
+
     const brandResults = productData.filter(product =>
       product.brand.toLowerCase().includes(searchQuery.toLowerCase())
     )
+
     const descriptionResults = productData.filter(product =>
       product.description.toLowerCase().includes(searchQuery.toLowerCase())
     )
