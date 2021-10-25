@@ -16,7 +16,6 @@ function Products({
   filterCategories,
   onAddRating,
   ratings,
-  searchProducts,
   searchQuery,
   setSearchQuery,
 }) {
@@ -46,11 +45,7 @@ function Products({
         filterCategories={filterCategories}
       />
       <ShowAllButton onShowAllProducts={handleShowAllProducts} />
-      <Search
-        searchProducts={searchProducts}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
+      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <CardList>
         {shownData.map(product => (
           <ProductCard
