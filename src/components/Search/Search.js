@@ -10,7 +10,7 @@ function Search({ searchQuery, onSearchInput }) {
   }
 
   return (
-    <form action="/" method="get" autoComplete="off" onSubmit={handleSubmit}>
+    <form autoComplete="off" onSubmit={handleSubmit}>
       <label>
         <ScreenReaderOnly>Search bar</ScreenReaderOnly>
         <input
