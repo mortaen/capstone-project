@@ -25,7 +25,7 @@ function App({ initialData }) {
     handleAddRating,
   })
 
-  const { searchQuery, setSearchQuery, searchResults } = useSearch({
+  const { searchQuery, handleSearchInput, searchResults } = useSearch({
     productData,
   })
 
@@ -53,7 +53,7 @@ function App({ initialData }) {
             onAddRating={handleAddRating}
             ratings={ratings}
             searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
+            onSearchInput={handleSearchInput}
           />
         </Route>
         <Route exact path="/product-form">

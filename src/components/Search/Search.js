@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
 
-function Search({ searchQuery, setSearchQuery }) {
+function Search({ searchQuery, onSearchInput }) {
   const history = useHistory()
 
   function handleSubmit(event) {
@@ -15,7 +15,7 @@ function Search({ searchQuery, setSearchQuery }) {
         <Span>Search bar</Span>
         <input
           value={searchQuery}
-          onInput={e => setSearchQuery(e.target.value)}
+          onInput={e => onSearchInput(e.target.value)}
           type="text"
           name="search"
         />

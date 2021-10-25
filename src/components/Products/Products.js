@@ -17,14 +17,14 @@ function Products({
   onAddRating,
   ratings,
   searchQuery,
-  setSearchQuery,
+  onSearchInput,
 }) {
   const history = useHistory()
 
   function handleShowAllProducts() {
     history.push('/')
     setActiveCategory('')
-    setSearchQuery('')
+    onSearchInput('')
   }
 
   return (
@@ -45,7 +45,7 @@ function Products({
         filterCategories={filterCategories}
       />
       <ShowAllButton onShowAllProducts={handleShowAllProducts} />
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Search searchQuery={searchQuery} onSearchInput={onSearchInput} />
       <CardList>
         {shownData.map(product => (
           <ProductCard

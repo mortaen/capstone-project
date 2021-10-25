@@ -8,6 +8,10 @@ export default function useSearch({ productData }) {
 
   const [searchQuery, setSearchQuery] = useState(query || '')
 
+  function handleSearchInput(input) {
+    setSearchQuery(input)
+  }
+
   let searchResults
   if (searchQuery !== '') {
     const nameResults = filterString(productData, searchQuery, 'name')
@@ -51,5 +55,5 @@ export default function useSearch({ productData }) {
     searchResults = productData
   }
 
-  return { searchQuery, setSearchQuery, searchResults }
+  return { searchQuery, handleSearchInput, searchResults }
 }
