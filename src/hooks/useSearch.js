@@ -19,21 +19,21 @@ export default function useSearch({ productData }) {
     )
 
     const ingredientsResults = productData.filter(product =>
-      product.ingredients
-        .map(ingredient => ingredient.toLowerCase())
-        .includes(searchQuery.toLowerCase())
+      product.ingredients.some(
+        ingredient => ingredient.toLowerCase() === searchQuery.toLowerCase()
+      )
     )
 
     const storesResults = productData.filter(product =>
-      product.stores
-        .map(store => store.toLowerCase())
-        .includes(searchQuery.toLowerCase())
+      product.stores.some(
+        store => store.toLowerCase() === searchQuery.toLowerCase()
+      )
     )
 
     const categoriesResults = productData.filter(product =>
-      product.categories
-        .map(category => category.toLowerCase())
-        .includes(searchQuery.toLowerCase())
+      product.categories.some(
+        category => category.toLowerCase() === searchQuery.toLowerCase()
+      )
     )
 
     searchResults = [].concat(
