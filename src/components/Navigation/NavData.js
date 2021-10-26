@@ -1,5 +1,6 @@
 import { AiOutlineHome } from 'react-icons/ai'
 import { AiOutlineForm } from 'react-icons/ai'
+import { BiFoodMenu } from 'react-icons/bi'
 
 export const NavData = [
   {
@@ -17,7 +18,7 @@ export const NavData = [
   {
     title: 'Recipes',
     path: '/recipes',
-    icon: <AiOutlineForm />,
+    icon: <BiFoodMenu />,
     id: 3,
   },
 ]
