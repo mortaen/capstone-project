@@ -14,4 +14,10 @@ export const NavData = [
     icon: <AiOutlineForm />,
     id: 2,
   },
+  {
+    title: 'Recipes',
+    path: '/recipes',
+    icon: <AiOutlineForm />,
+    id: 3,
+  },
 ]
