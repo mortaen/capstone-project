@@ -12,7 +12,7 @@ function RecipeCard({
     <Wrapper>
       <Image src={image} alt="" />
       <InfoWrapper>
-        <h2>{name}</h2>
+        <Heading>{name}</Heading>
         <Section>
           <Subheading>Zutaten</Subheading>
           {ingredients.map((ingredient, index) => (
@@ -52,6 +52,8 @@ const Image = styled.img`
   grid-area: image;
   width: 90%;
 `
+
+const Heading = styled.h2``
 
 const Subheading = styled.h3`
   grid-area: heading;
