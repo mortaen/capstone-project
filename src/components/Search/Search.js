@@ -15,9 +15,8 @@ function Search({ searchQuery, onSearchInput }) {
     history.push(`?search=${searchQuery}`)
   }
 
-  const delayedQuery = useCallback(() => debounce(updateUrl, 1000), [
-    searchQuery,
-  ])
+  // eslint-disable-next-line
+  const delayedQuery = useCallback(debounce(updateUrl, 1000), [searchQuery])
 
   useEffect(() => {
     delayedQuery()
