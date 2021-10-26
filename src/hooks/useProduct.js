@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-export default function useProduct({ initialData, handleAddRating }) {
+export default function useProduct({ initialProductData, handleAddRating }) {
   const [productData, setProductData] = useState(() => {
     if (localStorage.getItem('productsLocalStorage')) {
       return JSON.parse(localStorage.getItem('productsLocalStorage'))
     } else {
-      return initialData
+      return initialProductData
     }
   })
 

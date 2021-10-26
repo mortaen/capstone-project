@@ -4,12 +4,13 @@ import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
+import Recipes from './components/Recipes/Recipes'
 import useCategories from './hooks/useCategories'
 import useProduct from './hooks/useProduct'
 import useRating from './hooks/useRating'
 import useSearch from './hooks/useSearch'
 
-function App({ initialData }) {
+function App({ initialProductData, initialRecipeData }) {
   const {
     filterCategories,
     activeCategory,
@@ -21,7 +22,7 @@ function App({ initialData }) {
   const { ratings, handleAddRating } = useRating()
 
   const { productData, handleAddProduct } = useProduct({
-    initialData,
+    initialProductData,
     handleAddRating,
   })
 
@@ -64,6 +65,9 @@ function App({ initialData }) {
         </Route>
         <Route exact path="/product-details/:id">
           <ProductRoute productData={productData} />
+        </Route>
+        <Route exact path="/recipes">
+          <Recipes recipeData={initialRecipeData} />
         </Route>
         <Route>404 NOT FOUND</Route>
       </Switch>
