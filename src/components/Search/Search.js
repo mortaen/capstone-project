@@ -1,13 +1,30 @@
 import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
+import debounce from 'lodash.debounce'
+import { useCallback, useEffect } from 'react'
 
 function Search({ searchQuery, onSearchInput }) {
   const history = useHistory()
 
   function handleSubmit(event) {
-    history.push(`?q=${searchQuery}`)
+    history.push(`?search=${searchQuery}`)
     event.preventDefault()
   }
+
+  function updateUrl() {
+    history.push(`?search=${searchQuery}`)
+  }
+
+  const delayedQuery = useCallback(() => debounce(updateUrl, 1000), [
+    searchQuery,
+  ])
+
+  useEffect(() => {
+    delayedQuery()
+
+    // Cancel the debounce on useEffect cleanup.
+    return delayedQuery.cancel
+  }, [searchQuery, delayedQuery])
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
