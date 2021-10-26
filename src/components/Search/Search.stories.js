@@ -11,5 +11,5 @@ const Template = args => <Search {...args} />
 
 export const Searchbar = Template.bind({})
 Searchbar.args = {
-  setSearchQuery: action(search => console.log(search)),
+  onSearchInput: action(search => console.log(search)),
 }
