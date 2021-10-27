@@ -36,7 +36,7 @@ function RecipeCard({
         )}
       </DetailsWrapper>
       <Button onClick={() => onDetailsButtonClick()}>
-        Show {showDetails ? 'Less' : 'More'}
+        show {showDetails ? 'less' : 'more'}
       </Button>
     </Wrapper>
   )
@@ -119,6 +119,7 @@ const Button = styled.button`
     #fad0c4 100%
   );
   width: fit-content;
+  justify-self: center;
 `
 
 export default RecipeCard
