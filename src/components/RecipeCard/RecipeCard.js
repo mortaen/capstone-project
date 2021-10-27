@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 function RecipeCard({
@@ -7,6 +8,7 @@ function RecipeCard({
   image,
   onDetailsButtonClick,
   showDetails,
+  links,
 }) {
   return (
     <Wrapper>
@@ -19,9 +21,20 @@ function RecipeCard({
             <Item key={index}>{ingredient}</Item>
           ))}
         </Section>
+      </InfoWrapper>
+      <DetailsWrapper>
         {showDetails && <Subheading>Zubereitung</Subheading>}
         {showDetails && <Paragraph>{instructions}</Paragraph>}
-      </InfoWrapper>
+        {showDetails && (
+          <Section>
+            {links.map((link, index) => (
+              <StyledLink key={index} to={link.path}>
+                {link.name}
+              </StyledLink>
+            ))}
+          </Section>
+        )}
+      </DetailsWrapper>
       <Button onClick={() => onDetailsButtonClick()}>
         Show {showDetails ? 'Less' : 'More'}
       </Button>
@@ -34,7 +47,8 @@ const Wrapper = styled.section`
   grid-template-columns: 50% 50%;
   grid-template-areas:
     'image info'
-    'review info'
+    '. info'
+    'instructions instructions'
     'button button';
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -46,6 +60,10 @@ const Wrapper = styled.section`
 
 const InfoWrapper = styled.div`
   grid-area: info;
+`
+
+const DetailsWrapper = styled.div`
+  grid-area: instructions;
 `
 
 const Image = styled.img`
@@ -62,12 +80,25 @@ const Subheading = styled.h3`
 
 const Section = styled.section`
   display: grid;
-  grid-template-columns: 50% 50%;
   grid-template-areas:
-    'heading heading'
-    'items items';
+    'heading'
+    'items';
   grid-gap: 5px;
   margin-bottom: 8px;
+`
+
+const StyledLink = styled(Link)`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
+  text-align: center;
+  width: fit-content;
 `
 
 const Item = styled.span``
@@ -78,6 +109,16 @@ const Paragraph = styled.p`
 
 const Button = styled.button`
   grid-area: button;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
+  width: fit-content;
 `
 
 export default RecipeCard
