@@ -17,8 +17,8 @@ function RecipeCard({
         <Heading>{name}</Heading>
         <Section>
           <Subheading>Zutaten</Subheading>
-          {ingredients.map((ingredient, index) => (
-            <Item key={index}>{ingredient}</Item>
+          {ingredients.map(ingredient => (
+            <Item key={ingredient}>{ingredient}</Item>
           ))}
         </Section>
       </InfoWrapper>
@@ -27,8 +27,8 @@ function RecipeCard({
         {showDetails && <Paragraph>{instructions}</Paragraph>}
         {showDetails && (
           <Section>
-            {links.map((link, index) => (
-              <StyledLink key={index} to={link.path}>
+            {links.map(link => (
+              <StyledLink key={link.path} to={link.path}>
                 {link.name}
               </StyledLink>
             ))}
