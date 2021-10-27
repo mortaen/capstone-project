@@ -61,7 +61,7 @@ describe('RecipeCard', () => {
     expect(mockOnDetailsButtonClick).toHaveBeenCalled()
   })
 
-  it('shows instructions when showDetails is true', () => {
+  it('shows instructions and a link when showDetails is true', () => {
     render(
       <Router>
         <RecipeCard
@@ -69,6 +69,12 @@ describe('RecipeCard', () => {
           ingredients={['125g vegan yoghurt', '1 tbsp extra virgin olive oil']}
           instructions="Mix all the ingredients in a bowl. Keep in the fridge for at least 30 minutes."
           id="1"
+          links={[
+            {
+              name: 'Joghurt',
+              path: '/product-details/2',
+            },
+          ]}
           showDetails={true}
         />
       </Router>
@@ -81,6 +87,9 @@ describe('RecipeCard', () => {
       'Mix all the ingredients in a bowl. Keep in the fridge for at least 30 minutes.'
     )
     expect(instructions).toBeInTheDocument()
+
+    const link = screen.getByRole('link')
+    expect(link).toBeInTheDocument()
 
     const headers = screen.getAllByRole('heading')
     expect(headers).toHaveLength(3)
