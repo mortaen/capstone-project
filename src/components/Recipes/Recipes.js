@@ -23,6 +23,7 @@ function Recipes({ recipeData }) {
             instructions={recipe.instructions}
             image={recipe.image}
             id={recipe.id}
+            links={recipe.links}
             key={recipe.id}
             onDetailsButtonClick={handleDetailsButtonClick}
             showDetails={showDetails}
