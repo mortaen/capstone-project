@@ -1,17 +1,23 @@
 [
   {
-    "name": "Vegan Yoghurt Sauce",
+    "name": "Vegane Joghurtsauce",
     "id": "1",
     "ingredients": [
-      "125g vegan yoghurt",
-      "1 tbsp extra virgin olive oil",
-      "2 tbsp lemon juice",
-      "1 tsp fresh mint",
-      "2 cloves of garlic",
-      "1/2 teaspoon sea salt",
-      "pepper"
+      "125g veganer Joghurt",
+      "1 EL Olivenöl",
+      "2 EL Zitronensaft",
+      "1 TL frische Minze",
+      "2 Knoblauchzehen",
+      "1/2 TL Meersalz",
+      "Pfeffer"
     ],
-    "instructions": "Mix all the ingredients in a bowl. Keep in the fridge for at least 30 minutes.",
-    "image": "https://simpleveganblog.com/wp-content/uploads/2015/09/Vegan-yogurt-sauce.jpg"
+    "instructions": "Mixe alle Zutaten in einer Schüssel zusammen. Mindestens 30 Minuten im Kühlschrank aufbewahren.",
+    "image": "https://simpleveganblog.com/wp-content/uploads/2015/09/Vegan-yogurt-sauce.jpg",
+    "links": [
+      {
+        "name": "Joghurt",
+        "path": "/product-details/2"
+      }
+    ]
   }
 ]
