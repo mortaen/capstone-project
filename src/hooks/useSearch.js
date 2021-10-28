@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router'
 import filterArray from '../utils/filterArray'
 import filterString from '../utils/filterString'
 
 export default function useSearch({ productData }) {
-  const { search } = window.location
+  const { search } = useLocation()
   const query = new URLSearchParams(search).get('search')
 
   const [searchQuery, setSearchQuery] = useState(query || '')
