@@ -1,31 +1,69 @@
+import { debounce } from 'lodash'
+import { useCallback } from 'react'
+import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import { AiOutlineFileAdd, AiOutlineHome } from 'react-icons/ai'
 import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
+import useCategories from '../../hooks/useCategories'
+import useSearch from '../../hooks/useSearch'
 import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
 import Search from '../Search/Search'
 import ShowAllButton from '../ShowAllButton/ShowAllButton'
 
-function Products({
-  shownData,
-  onCategoryClick,
-  activeCategory,
-  setActiveCategory,
-  filterCategories,
-  onAddRating,
-  ratings,
-  searchQuery,
-  onSearchInput,
-}) {
+function Products({ onAddRating, ratings, productData }) {
   const history = useHistory()
+
+  const {
+    productCategories,
+    activeCategory,
+    setActiveCategory,
+    handleCategoryClick,
+  } = useCategories()
 
   function handleShowAllProducts() {
     history.push('/')
     setActiveCategory('')
-    onSearchInput('')
+    handleSearchInput('')
   }
+
+  const { searchQuery, handleSearchInput, searchResults } = useSearch({
+    productData,
+  })
+
+  let shownData
+  if (activeCategory !== '') {
+    shownData = searchResults.filter(product =>
+      product.categories.includes(activeCategory)
+    )
+  } else {
+    shownData = searchResults
+  }
+
+  function handleSubmit(event) {
+    history.push(`?search=${searchQuery}&category=${activeCategory}`)
+    event.preventDefault()
+  }
+
+  function updateUrl() {
+    if (searchQuery === '') {
+      history.push('/')
+    } else {
+      history.push(`?search=${searchQuery}&category=${activeCategory}`)
+    }
+  }
+
+  // eslint-disable-next-line
+  const delayedQuery = useCallback(debounce(updateUrl, 1000), [searchQuery])
+
+  useEffect(() => {
+    delayedQuery()
+
+    // Cancel the debounce on useEffect cleanup.
+    return delayedQuery.cancel
+  }, [searchQuery, delayedQuery])
 
   return (
     <>
@@ -40,12 +78,16 @@ function Products({
         />
       </IconContext.Provider>
       <Filter
-        onCategoryClick={onCategoryClick}
+        onCategoryClick={handleCategoryClick}
         activeCategory={activeCategory}
-        filterCategories={filterCategories}
+        productCategories={productCategories}
       />
       <ShowAllButton onShowAllProducts={handleShowAllProducts} />
-      <Search searchQuery={searchQuery} onSearchInput={onSearchInput} />
+      <Search
+        searchQuery={searchQuery}
+        onSearchInput={handleSearchInput}
+        onSubmit={handleSubmit}
+      />
       <CardList>
         {shownData.map(product => (
           <ProductCard
