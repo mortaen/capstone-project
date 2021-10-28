@@ -7,7 +7,7 @@ function Search({ searchQuery, onSearchInput }) {
   const history = useHistory()
 
   function handleSubmit(event) {
-    history.push(`?search=${searchQuery}`)
+    history.push(`?search=${searchQuery}&category=${}`)
     event.preventDefault()
   }
 
@@ -41,6 +41,7 @@ function Search({ searchQuery, onSearchInput }) {
   )
 }
 
+// :)
 const ScreenReaderOnly = styled.span`
   display: inline-block;
   border: 0;

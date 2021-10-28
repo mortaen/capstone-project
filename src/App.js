@@ -26,31 +26,30 @@ function App({ initialProductData, initialRecipeData }) {
     handleAddRating,
   })
 
+  // Idea: Move search and filter logic to Products View
   const { searchQuery, handleSearchInput, searchResults } = useSearch({
     productData,
   })
 
   let shownData
   if (activeCategory !== '') {
-    shownData = productData.filter(product =>
+    shownData = searchResults.filter(product =>
       product.categories.includes(activeCategory)
     )
-  } else if (searchResults !== productData) {
-    shownData = searchResults
   } else {
-    shownData = productData
+    shownData = searchResults
   }
 
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path={['/', '/products']}>
           <Products
             shownData={shownData}
             onCategoryClick={handleCategoryClick}
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
-            filterCategories={filterCategories}
+            filterCategories={filterCategories} // consider `productCategories`
             onAddRating={handleAddRating}
             ratings={ratings}
             searchQuery={searchQuery}

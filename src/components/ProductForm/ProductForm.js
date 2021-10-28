@@ -153,8 +153,10 @@ const Heading = styled.h2`
   text-align: center;
 `
 
+// maybe remame OnlyForScreenReader
 const Span = styled.span`
   display: none;
+  // add $%(§%?(=§))
 `
 
 export default ProductForm

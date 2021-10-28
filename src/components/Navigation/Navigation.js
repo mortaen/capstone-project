@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import { NavData } from './NavData'
 
 function Navigation() {
+  // rename to showNavigation
   const [navigation, setNavigation] = useState(false)
 
   function showNavigation() {
