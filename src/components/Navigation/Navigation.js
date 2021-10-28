@@ -5,17 +5,23 @@ import styled from 'styled-components/macro'
 import { NavData } from './NavData'
 
 function Navigation() {
-  const [navigation, setNavigation] = useState(false)
+  const [showNavigation, setShowNavigation] = useState(false)
 
-  function showNavigation() {
-    setNavigation(!navigation)
+  function toggleNavigation() {
+    setShowNavigation(!showNavigation)
   }
 
   return (
     <>
-      <NavButton showNavigation={showNavigation} navigation={navigation} />
-      <Nav navigation={navigation}>
-        <NavButton showNavigation={showNavigation} navigation={navigation} />
+      <NavButton
+        toggleNavigation={toggleNavigation}
+        showNavigation={showNavigation}
+      />
+      <Nav showNavigation={showNavigation}>
+        <NavButton
+          toggleNavigation={toggleNavigation}
+          showNavigation={showNavigation}
+        />
         {NavData.map(item => {
           return (
             <NavItem key={item.id}>
@@ -46,8 +52,8 @@ const Nav = styled.nav`
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 5px;
-  ${({ navigation }) =>
-    navigation &&
+  ${({ showNavigation }) =>
+    showNavigation &&
     `
     right: 0;
     `}
