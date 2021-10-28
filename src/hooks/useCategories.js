@@ -3,7 +3,7 @@ import { useState } from 'react'
 export default function useCategories() {
   const initialCategories = ['plant milk', 'plant yoghurt', 'meat alternative']
 
-  const [filterCategories, setFilterCategories] = useState(() => {
+  const [productCategories, setProductCategories] = useState(() => {
     if (localStorage.getItem('categoriesLocalStorage')) {
       return JSON.parse(localStorage.getItem('categoriesLocalStorage'))
     } else {
@@ -19,7 +19,7 @@ export default function useCategories() {
 
   function handleAddCategories({ categories }) {
     const categoriesArray = categories.split(',').map(item => item.trim())
-    let newCategories = filterCategories
+    let newCategories = productCategories
 
     categoriesArray.forEach(function (category) {
       if (!newCategories.includes(category)) {
@@ -27,13 +27,13 @@ export default function useCategories() {
       }
     })
 
-    setFilterCategories(newCategories)
+    setProductCategories(newCategories)
 
     const stringifiedValue = JSON.stringify(newCategories)
     localStorage.setItem('categoriesLocalStorage', stringifiedValue)
   }
   return {
-    filterCategories,
+    productCategories,
     activeCategory,
     setActiveCategory,
     handleCategoryClick,
