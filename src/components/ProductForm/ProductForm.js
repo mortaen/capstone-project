@@ -13,7 +13,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
       <Heading>Add your product</Heading>
       <Form onSubmit={event => handleSubmit(event)}>
         <Label>
-          <Span>Product Name:</Span>
+          <ScreenReaderOnly>Product Name:</ScreenReaderOnly>
           <input
             type="text"
             name="productName"
@@ -23,7 +23,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         </Label>
 
         <Label>
-          <Span>Brand:</Span>
+          <ScreenReaderOnly>Brand:</ScreenReaderOnly>
           <input
             type="text"
             name="brand"
@@ -33,12 +33,12 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         </Label>
 
         <Label>
-          <Span>Image Url:</Span>
+          <ScreenReaderOnly>Image Url:</ScreenReaderOnly>
           <input type="text" name="imgUrl" placeholder="Enter img url.." />
         </Label>
 
         <Label>
-          <Span>Description:</Span>
+          <ScreenReaderOnly>Description:</ScreenReaderOnly>
           <input
             type="text"
             name="description"
@@ -47,7 +47,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         </Label>
 
         <Label>
-          <Span>Stores:</Span>
+          <ScreenReaderOnly>Stores:</ScreenReaderOnly>
           <input
             type="text"
             name="stores"
@@ -84,7 +84,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           <input type="text" name="protein" />
         </Label>
         <Label>
-          <Span>Categories:</Span>
+          <ScreenReaderOnly>Categories:</ScreenReaderOnly>
           <input
             type="text"
             name="categories"
@@ -153,8 +153,15 @@ const Heading = styled.h2`
   text-align: center;
 `
 
-const Span = styled.span`
-  display: none;
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `
 
 export default ProductForm
