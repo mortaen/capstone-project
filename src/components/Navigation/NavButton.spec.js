@@ -10,20 +10,27 @@ describe('NavButton', () => {
     expect(button).toBeInTheDocument()
   })
 
-  it('calls a function when button is clicked and navigation state is false', () => {
-    const mockShowNavigation = jest.fn()
+  it('calls a function when button is clicked and showNavigation state is false', () => {
+    const mockToggleNavigation = jest.fn()
 
-    render(<NavButton showNavigation={mockShowNavigation} navigation={false} />)
+    render(
+      <NavButton
+        toggleNavigation={mockToggleNavigation}
+        showNavigation={false}
+      />
+    )
 
     const button = screen.getByRole('button')
     userEvent.click(button)
-    expect(mockShowNavigation).toHaveBeenCalled()
+    expect(mockToggleNavigation).toHaveBeenCalled()
   })
 
-  it('calls a function when button is clicked and navigation state is true', () => {
+  it('calls a function when button is clicked and showNavigation state is true', () => {
     const mockShowNavigation = jest.fn()
 
-    render(<NavButton showNavigation={mockShowNavigation} navigation={true} />)
+    render(
+      <NavButton toggleNavigation={mockShowNavigation} showNavigation={true} />
+    )
 
     const button = screen.getByRole('button')
     userEvent.click(button)
