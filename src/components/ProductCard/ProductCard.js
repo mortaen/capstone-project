@@ -33,6 +33,7 @@ const Wrapper = styled.section`
   margin: 10px;
   text-decoration: none;
   color: inherit;
+  background-color: white;
 `
 
 const InfoWrapper = styled.div`

@@ -1,8 +1,10 @@
 import { debounce } from 'lodash'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
-import { AiOutlineFileAdd, AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineHome } from 'react-icons/ai'
+import { MdAdd } from 'react-icons/md'
+import { MdOutlineFilterAlt } from 'react-icons/md'
 import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
 import useCategories from '../../hooks/useCategories'
@@ -74,15 +76,19 @@ function Products({ onAddRating, ratings, productData }) {
   return (
     <>
       <Heading>
-        <AiOutlineHome /> Products
+        <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
+          <StyledAiOutlineHome />
+        </IconContext.Provider>{' '}
+        Products
       </Heading>
-      <IconContext.Provider value={{ color: '#1f2933', size: '25px' }}>
-        <CustomLink
-          path="/product-form"
-          name="Add Item"
-          icon={<AiOutlineFileAdd />}
-        />
-      </IconContext.Provider>
+      <Section>
+        <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
+          <CustomLink
+            path="/product-form"
+            aria-label="add item"
+            icon={<MdAdd />}
+          />
+        </IconContext.Provider>
         <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
           <MdOutlineFilterAlt aria-label="show filters" onClick={showFilter} />
         </IconContext.Provider>
@@ -94,7 +100,6 @@ function Products({ onAddRating, ratings, productData }) {
         productCategories={productCategories}
         showFilters={showFilters}
       />
-      <ShowAllButton onShowAllProducts={handleShowAllProducts} />
       <Search
         searchQuery={searchQuery}
         onSearchInput={handleSearchInput}
@@ -125,6 +130,19 @@ const CardList = styled.ul`
 
 const Heading = styled.h2`
   text-align: center;
+  color: #2f4858;
+  font-size: 2rem;
+`
+
+const StyledAiOutlineHome = styled(AiOutlineHome)`
+  display: inline-flex;
+  vertical-align: -8%;
+`
+
+const Section = styled.section`
+  background-color: #2f4858;
+  display: flex;
+  justify-content: space-around;
 `
 
 export default Products

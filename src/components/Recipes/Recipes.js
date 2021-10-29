@@ -11,9 +11,9 @@ function Recipes({ recipeData }) {
   }
 
   return (
-    <>
+    <Wrapper>
       <Heading>
-        <BiFoodMenu /> Recipes
+        <StyledBiFoodMenu /> Recipes
       </Heading>
       <CardList>
         {recipeData.map(recipe => (
@@ -30,9 +30,13 @@ function Recipes({ recipeData }) {
           />
         ))}
       </CardList>
-    </>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+`
 
 const CardList = styled.ul`
   display: grid;
@@ -42,6 +46,14 @@ const CardList = styled.ul`
 
 const Heading = styled.h2`
   text-align: center;
+  color: #2f4858;
+  font-size: 2rem;
+  margin-bottom: 0;
+`
+
+const StyledBiFoodMenu = styled(BiFoodMenu)`
+  display: inline-flex;
+  vertical-align: -8%;
 `
 
 export default Recipes

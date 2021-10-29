@@ -16,7 +16,7 @@ function DetailsPage({
 }) {
   return (
     <>
-      <IconContext.Provider value={{ color: '#1f2933', size: '40px' }}>
+      <IconContext.Provider value={{ color: '#2f4858', size: '3rem' }}>
         <CustomLink path="/" icon={<MdNavigateBefore />} />
       </IconContext.Provider>
       <Heading>{name}</Heading>
@@ -62,6 +62,9 @@ function DetailsPage({
 
 const Heading = styled.h2`
   text-align: center;
+  font-size: 2rem;
+  margin-top: 0;
+  color: #2f4858;
 `
 
 const Subheading = styled.h3`
@@ -80,18 +83,20 @@ const Section = styled.section`
   grid-template-areas:
     'heading heading'
     'items items';
-  grid-gap: 5px;
+  grid-gap: 0.4rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 0.6rem;
   padding: 1rem;
-  margin: 10px;
+  margin: 0.6rem;
+  background-color: white;
 `
 
 const Description = styled.p`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 0.6rem;
   padding: 1rem;
-  margin: 10px;
+  margin: 0.6rem;
+  background-color: white;
 `
 
 const Item = styled.span``
