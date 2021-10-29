@@ -1,23 +1,14 @@
-import { useState } from 'react'
 import styled from 'styled-components/macro'
-import FilterButton from './FilterButton'
 
-function Filter({ onCategoryClick, activeCategory, productCategories }) {
-  const [showFilters, setShowFilters] = useState(false)
-
-  function showFilter() {
-    setShowFilters(!showFilters)
-  }
-
+function Filter({
+  onCategoryClick,
+  activeCategory,
+  productCategories,
+  showFilters,
+}) {
   return (
     <>
-      <FilterButton showFilter={showFilter} />
       <List showFilters={showFilters}>
-        {activeCategory !== '' ? (
-          <ShowAll onClick={() => onCategoryClick('')}>show all</ShowAll>
-        ) : (
-          ''
-        )}
         {productCategories.map((item, index) => {
           return (
             <Item
@@ -38,21 +29,23 @@ function Filter({ onCategoryClick, activeCategory, productCategories }) {
 const List = styled.ul`
   display: none;
   list-style-type: none;
-  background-color: #1f2933;
+  background-color: #2f4858;
   color: white;
+  margin: 0;
   ${({ showFilters }) =>
     showFilters &&
     `
-display: block;
+display: grid;
+grid-template-columns: 50% 50%; 
+grid-gap: 0.5rem;
 `};
 `
 
 const Item = styled.li`
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 5px;
-  max-width: 35vw;
-  margin: 7px 0px;
+  border: 0.1rem solid white;
+  border-radius: 0.6rem;
+  padding: 0.3rem;
+  width: fit-content;
   ${({ activeCategory, item }) =>
     activeCategory === item
       ? `
@@ -62,14 +55,6 @@ const Item = styled.li`
       : `
           color: inherit;
         `};
-`
-
-const ShowAll = styled.li`
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 5px;
-  max-width: 35vw;
-  margin: 7px 0px;
 `
 
 export default Filter

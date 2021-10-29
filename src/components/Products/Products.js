@@ -23,6 +23,12 @@ function Products({ onAddRating, ratings, productData }) {
     handleCategoryClick,
   } = useCategories()
 
+  const [showFilters, setShowFilters] = useState(false)
+
+  function showFilter() {
+    setShowFilters(!showFilters)
+  }
+
   function handleShowAllProducts() {
     history.push('/')
     setActiveCategory('')
@@ -77,10 +83,16 @@ function Products({ onAddRating, ratings, productData }) {
           icon={<AiOutlineFileAdd />}
         />
       </IconContext.Provider>
+        <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
+          <MdOutlineFilterAlt aria-label="show filters" onClick={showFilter} />
+        </IconContext.Provider>
+        <ShowAllButton onShowAllProducts={handleShowAllProducts} />
+      </Section>
       <Filter
         onCategoryClick={handleCategoryClick}
         activeCategory={activeCategory}
         productCategories={productCategories}
+        showFilters={showFilters}
       />
       <ShowAllButton onShowAllProducts={handleShowAllProducts} />
       <Search
