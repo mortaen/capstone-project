@@ -104,7 +104,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         </Label>
 
         <Label>
-          <ScreenReaderOnly>Price:</ScreenReaderOnly>
+          <ScreenReaderOnly>Price</ScreenReaderOnly>
           <Input
             type="number"
             step="any"

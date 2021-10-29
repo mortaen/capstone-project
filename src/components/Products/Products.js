@@ -13,7 +13,6 @@ import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
 import Search from '../Search/Search'
-import ShowAllButton from '../ShowAllButton/ShowAllButton'
 
 function Products({ onAddRating, ratings, productData }) {
   const history = useHistory()
@@ -78,7 +77,7 @@ function Products({ onAddRating, ratings, productData }) {
       <Heading>
         <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
           <StyledAiOutlineHome />
-        </IconContext.Provider>{' '}
+        </IconContext.Provider>
         Products
       </Heading>
       <Section>
@@ -93,7 +92,7 @@ function Products({ onAddRating, ratings, productData }) {
           <MdOutlineFilterAlt aria-label="show filters" onClick={showFilter} />
         </IconContext.Provider>
         <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
-          <MdAutorenew onClick={showAllProducts} />
+          <MdAutorenew aria-label="show all" onClick={showAllProducts} />
         </IconContext.Provider>
       </Section>
       <Filter
