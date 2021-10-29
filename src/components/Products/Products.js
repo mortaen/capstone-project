@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import { AiOutlineHome } from 'react-icons/ai'
-import { MdAdd } from 'react-icons/md'
+import { MdAdd, MdAutorenew } from 'react-icons/md'
 import { MdOutlineFilterAlt } from 'react-icons/md'
 import { useHistory } from 'react-router'
 import styled from 'styled-components/macro'
@@ -31,7 +31,7 @@ function Products({ onAddRating, ratings, productData }) {
     setShowFilters(!showFilters)
   }
 
-  function handleShowAllProducts() {
+  function showAllProducts() {
     history.push('/')
     setActiveCategory('')
     handleSearchInput('')
@@ -92,7 +92,9 @@ function Products({ onAddRating, ratings, productData }) {
         <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
           <MdOutlineFilterAlt aria-label="show filters" onClick={showFilter} />
         </IconContext.Provider>
-        <ShowAllButton onShowAllProducts={handleShowAllProducts} />
+        <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
+          <MdAutorenew onClick={showAllProducts} />
+        </IconContext.Provider>
       </Section>
       <Filter
         onCategoryClick={handleCategoryClick}
