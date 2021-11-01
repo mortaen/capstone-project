@@ -15,6 +15,10 @@ import ProductCard from '../ProductCard/ProductCard'
 import Search from '../Search/Search'
 
 function Products({ onAddRating, ratings, productData }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const history = useHistory()
 
   const {
