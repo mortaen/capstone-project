@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import Recipes from './Recipes'
 
 describe('Recipes', () => {
@@ -22,11 +23,18 @@ describe('Recipes', () => {
     },
   ]
 
-  it('renders the page title and a list of cards', () => {
-    render(<Recipes recipeData={exampleRecipeData} />)
+  it('renders the page title, a link and a list of cards', () => {
+    render(
+      <Router>
+        <Recipes recipeData={exampleRecipeData} />
+      </Router>
+    )
 
     const title = screen.getByText('Recipes')
     expect(title).toBeInTheDocument()
+
+    const link = screen.getByRole('link')
+    expect(link).toBeInTheDocument()
 
     const list = screen.getByRole('list')
     expect(list).toBeInTheDocument()

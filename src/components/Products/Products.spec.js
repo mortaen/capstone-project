@@ -23,7 +23,7 @@ const exampleData = [
 describe('Products', () => {
   const mockOnCategoryClick = jest.fn()
 
-  it('renders CardList and page title', () => {
+  it('renders the page title, a link, two more icons and a list of products', () => {
     render(
       <Router>
         <Products productData={exampleData} ratings={exampleRatings} />
@@ -32,6 +32,9 @@ describe('Products', () => {
 
     const products = screen.getByRole('list')
     expect(products).toBeInTheDocument()
+
+    const link = screen.getByRole('link')
+    expect(link).toBeInTheDocument()
 
     const filterIcon = screen.getByLabelText('show filters')
     expect(filterIcon).toBeInTheDocument()
