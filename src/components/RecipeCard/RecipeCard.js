@@ -1,15 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
-function RecipeCard({
-  name,
-  ingredients,
-  instructions,
-  image,
-  onDetailsButtonClick,
-  showDetails,
-  links,
-}) {
+function RecipeCard({ name, ingredients, instructions, image, links }) {
+  const [showDetails, setShowDetails] = useState(false)
+
+  function handleDetailsButtonClick() {
+    setShowDetails(!showDetails)
+  }
+
   return (
     <Wrapper>
       <Image src={image} alt="" />
@@ -27,15 +26,16 @@ function RecipeCard({
         {showDetails && <Paragraph>{instructions}</Paragraph>}
         {showDetails && (
           <Section>
-            {links.map(link => (
-              <StyledLink key={link.path} to={link.path}>
-                {link.name}
-              </StyledLink>
-            ))}
+            {links &&
+              links.map(link => (
+                <StyledLink key={link.path} to={link.path}>
+                  {link.name}
+                </StyledLink>
+              ))}
           </Section>
         )}
       </DetailsWrapper>
-      <Button onClick={() => onDetailsButtonClick()}>
+      <Button onClick={() => handleDetailsButtonClick()}>
         show {showDetails ? 'less' : 'more'}
       </Button>
     </Wrapper>

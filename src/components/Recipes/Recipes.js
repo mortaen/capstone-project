@@ -1,15 +1,8 @@
-import { useState } from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { BiFoodMenu } from 'react-icons/bi'
 import styled from 'styled-components/macro'
 
 function Recipes({ recipeData }) {
-  const [showDetails, setShowDetails] = useState(false)
-
-  function handleDetailsButtonClick() {
-    setShowDetails(!showDetails)
-  }
-
   return (
     <Wrapper>
       <Heading>
@@ -25,8 +18,6 @@ function Recipes({ recipeData }) {
             id={recipe.id}
             links={recipe.links}
             key={recipe.id}
-            onDetailsButtonClick={handleDetailsButtonClick}
-            showDetails={showDetails}
           />
         ))}
       </CardList>
