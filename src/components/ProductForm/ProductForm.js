@@ -56,102 +56,96 @@ function ProductForm({ onAddProduct, onAddCategories }) {
       <Heading>
         <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
           <StyledAiOutlineForm />
-        </IconContext.Provider>{' '}
-        Add Products
+        </IconContext.Provider>
+        Add Product
       </Heading>
       <Form onSubmit={event => handleSubmit(event)}>
-        <Label>
-          <ScreenReaderOnly>Product Name</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="productName"
-            placeholder="Enter product name.."
-            required
-          />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="productName">
+          Product Name
+        </ScreenReaderOnlyLabel>
+        <Input
+          type="text"
+          name="productName"
+          placeholder="Enter product name.."
+          required
+        />
 
-        <Label>
-          <ScreenReaderOnly>Brand</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="brand"
-            id="brand"
-            placeholder="Specify brand.."
-          />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="brand">Brand</ScreenReaderOnlyLabel>
+        <Input
+          type="text"
+          name="brand"
+          id="brand"
+          placeholder="Specify brand.."
+        />
 
-        <Label>
-          <ScreenReaderOnly>Image Url</ScreenReaderOnly>
-          <Input type="text" name="imgUrl" placeholder="Enter img url.." />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="imgUrl">
+          Image Url
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="imgUrl" placeholder="Enter img url.." />
 
-        <Label>
-          <ScreenReaderOnly>Description</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="description"
-            placeholder="Describe the product.."
-          />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="description">
+          Description
+        </ScreenReaderOnlyLabel>
+        <Input
+          type="text"
+          name="description"
+          placeholder="Describe the product.."
+        />
 
-        <Label>
-          <ScreenReaderOnly>Stores</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="stores"
-            placeholder="Where can you buy it?"
-          />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="stores">Stores</ScreenReaderOnlyLabel>
+        <Input type="text" name="stores" placeholder="Where can you buy it?" />
 
-        <Label>
-          <ScreenReaderOnly>Price</ScreenReaderOnly>
-          <Input
-            type="number"
-            step="any"
-            name="price"
-            placeholder="Enter price here.."
-          />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Ingredients</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="ingredients"
-            placeholder="Enter Ingredients here.."
-          />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Energy per 100g</ScreenReaderOnly>
-          <Input type="text" name="energy" placeholder="Energy per 100g" />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Fats per 100g</ScreenReaderOnly>
-          <Input type="text" name="fats" placeholder="Fats per 100g" />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Carbohydrates per 100g</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="carbohydrates"
-            placeholder="Carbohydrates per 100g"
-          />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Fiber per 100g</ScreenReaderOnly>
-          <Input type="text" name="fiber" placeholder="Fiber per 100g" />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Protein per 100g</ScreenReaderOnly>
-          <Input type="text" name="protein" placeholder="Protein per 100g" />
-        </Label>
-        <Label>
-          <ScreenReaderOnly>Categories</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="categories"
-            placeholder="Enter categories.."
-          />
-        </Label>
+        <ScreenReaderOnlyLabel htmlFor="price">Price</ScreenReaderOnlyLabel>
+        <Input
+          type="number"
+          step="any"
+          name="price"
+          placeholder="Enter price here.."
+        />
+
+        <ScreenReaderOnlyLabel htmlFor="ingredients">
+          Ingredients
+        </ScreenReaderOnlyLabel>
+        <Input
+          type="text"
+          name="ingredients"
+          placeholder="Enter Ingredients here.."
+        />
+
+        <ScreenReaderOnlyLabel htmlFor="energy">
+          Energy per 100g
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="energy" placeholder="Energy per 100g" />
+
+        <ScreenReaderOnlyLabel htmlFor="fats">
+          Fats per 100g
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="fats" placeholder="Fats per 100g" />
+
+        <ScreenReaderOnlyLabel htmlFor="carbohydrates">
+          Carbohydrates per 100g
+        </ScreenReaderOnlyLabel>
+        <Input
+          type="text"
+          name="carbohydrates"
+          placeholder="Carbohydrates per 100g"
+        />
+
+        <ScreenReaderOnlyLabel htmlFor="fiber">
+          Fiber per 100g
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="fiber" placeholder="Fiber per 100g" />
+
+        <ScreenReaderOnlyLabel htmlFor="protein">
+          Protein per 100g
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="protein" placeholder="Protein per 100g" />
+
+        <ScreenReaderOnlyLabel htmlFor="categories">
+          Categories
+        </ScreenReaderOnlyLabel>
+        <Input type="text" name="categories" placeholder="Enter categories.." />
+
         <Button>Submit</Button>
       </Form>
     </>
@@ -164,14 +158,10 @@ const Form = styled.form`
   align-items: center;
 `
 
-const Label = styled.label`
-  width: 100%;
-`
-
 const Input = styled.input`
   width: 80%;
   min-height: 2rem;
-  margin: 1rem 0 0 2rem;
+  margin-top: 1rem;
   border-radius: 0.3rem;
 `
 
@@ -202,7 +192,7 @@ const StyledAiOutlineForm = styled(AiOutlineForm)`
   vertical-align: -8%;
 `
 
-const ScreenReaderOnly = styled.span`
+const ScreenReaderOnlyLabel = styled.label`
   display: inline-block;
   border: 0;
   clip: rect(0 0 0 0);
