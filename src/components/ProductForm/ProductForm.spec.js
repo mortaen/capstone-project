@@ -14,49 +14,43 @@ describe('ProductForm', () => {
     const heading = screen.getByRole('heading')
     expect(heading).toBeInTheDocument()
 
-    const nameInput = screen.getByPlaceholderText('Enter product name..')
+    const nameInput = screen.getByLabelText('Product Name')
     expect(nameInput).toBeInTheDocument()
 
     const brandInput = screen.getByLabelText('Brand')
     expect(brandInput).toBeInTheDocument()
 
-    const imageInput = screen.getByPlaceholderText('Enter img url..')
+    const imageInput = screen.getByLabelText('Image Url')
     expect(imageInput).toBeInTheDocument()
 
-    const descriptionInput = screen.getByPlaceholderText(
-      'Describe the product..'
-    )
+    const descriptionInput = screen.getByLabelText('Description')
     expect(descriptionInput).toBeInTheDocument()
 
-    const storesInput = screen.getByPlaceholderText('Where can you buy it?')
+    const storesInput = screen.getByLabelText('Stores')
     expect(storesInput).toBeInTheDocument()
 
-    const priceInput = screen.getByPlaceholderText('Enter price here..')
+    const priceInput = screen.getByLabelText('Price')
     expect(priceInput).toBeInTheDocument()
 
-    const ingredientsInput = screen.getByPlaceholderText(
-      'Enter Ingredients here..'
-    )
+    const ingredientsInput = screen.getByLabelText('Ingredients')
     expect(ingredientsInput).toBeInTheDocument()
 
-    const energyInput = screen.getByPlaceholderText('Energy per 100g')
+    const energyInput = screen.getByLabelText('Energy per 100g')
     expect(energyInput).toBeInTheDocument()
 
-    const fatsInput = screen.getByPlaceholderText('Fats per 100g')
+    const fatsInput = screen.getByLabelText('Fats per 100g')
     expect(fatsInput).toBeInTheDocument()
 
-    const carbohydratesInput = screen.getByPlaceholderText(
-      'Carbohydrates per 100g'
-    )
+    const carbohydratesInput = screen.getByLabelText('Carbohydrates per 100g')
     expect(carbohydratesInput).toBeInTheDocument()
 
-    const fiberInput = screen.getByPlaceholderText('Fiber per 100g')
+    const fiberInput = screen.getByLabelText('Fiber per 100g')
     expect(fiberInput).toBeInTheDocument()
 
-    const proteinInput = screen.getByPlaceholderText('Protein per 100g')
+    const proteinInput = screen.getByLabelText('Protein per 100g')
     expect(proteinInput).toBeInTheDocument()
 
-    const categoriesInput = screen.getByPlaceholderText('Enter categories..')
+    const categoriesInput = screen.getByLabelText('Categories')
     expect(categoriesInput).toBeInTheDocument()
 
     const submitButton = screen.getByRole('button', { name: 'Submit' })

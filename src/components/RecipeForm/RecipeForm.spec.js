@@ -14,20 +14,16 @@ describe('RecipeForm', () => {
     const heading = screen.getByRole('heading')
     expect(heading).toBeInTheDocument()
 
-    const nameInput = screen.getByPlaceholderText('Enter recipe name..')
+    const nameInput = screen.getByLabelText('Recipe Name')
     expect(nameInput).toBeInTheDocument()
 
-    const instructionsInput = screen.getByPlaceholderText(
-      'Enter instructions..'
-    )
+    const instructionsInput = screen.getByLabelText('Instructions')
     expect(instructionsInput).toBeInTheDocument()
 
-    const ingredientsInput = screen.getByPlaceholderText(
-      'Enter Ingredients here..'
-    )
+    const ingredientsInput = screen.getByLabelText('Ingredients')
     expect(ingredientsInput).toBeInTheDocument()
 
-    const imageInput = screen.getByPlaceholderText('Enter img url..')
+    const imageInput = screen.getByLabelText('Image Url')
     expect(imageInput).toBeInTheDocument()
 
     const submitButton = screen.getByRole('button', { name: 'Submit' })
