@@ -59,13 +59,14 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         </IconContext.Provider>
         Add Product
       </Heading>
-      <Form onSubmit={event => handleSubmit(event)}>
+      <Form onSubmit={handleSubmit}>
         <ScreenReaderOnlyLabel htmlFor="productName">
           Product Name
         </ScreenReaderOnlyLabel>
         <Input
           type="text"
           name="productName"
+          id="productName"
           placeholder="Enter product name.."
           required
         />
@@ -81,7 +82,12 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
           Image Url
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="imgUrl" placeholder="Enter img url.." />
+        <Input
+          type="text"
+          name="imgUrl"
+          id="imgUrl"
+          placeholder="Enter img url.."
+        />
 
         <ScreenReaderOnlyLabel htmlFor="description">
           Description
@@ -89,17 +95,24 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         <Input
           type="text"
           name="description"
+          id="description"
           placeholder="Describe the product.."
         />
 
         <ScreenReaderOnlyLabel htmlFor="stores">Stores</ScreenReaderOnlyLabel>
-        <Input type="text" name="stores" placeholder="Where can you buy it?" />
+        <Input
+          type="text"
+          name="stores"
+          id="stores"
+          placeholder="Where can you buy it?"
+        />
 
         <ScreenReaderOnlyLabel htmlFor="price">Price</ScreenReaderOnlyLabel>
         <Input
           type="number"
           step="any"
           name="price"
+          id="price"
           placeholder="Enter price here.."
         />
 
@@ -109,18 +122,24 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         <Input
           type="text"
           name="ingredients"
+          id="ingredients"
           placeholder="Enter Ingredients here.."
         />
 
         <ScreenReaderOnlyLabel htmlFor="energy">
           Energy per 100g
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="energy" placeholder="Energy per 100g" />
+        <Input
+          type="text"
+          name="energy"
+          id="energy"
+          placeholder="Energy per 100g"
+        />
 
         <ScreenReaderOnlyLabel htmlFor="fats">
           Fats per 100g
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="fats" placeholder="Fats per 100g" />
+        <Input type="text" name="fats" id="fats" placeholder="Fats per 100g" />
 
         <ScreenReaderOnlyLabel htmlFor="carbohydrates">
           Carbohydrates per 100g
@@ -128,23 +147,39 @@ function ProductForm({ onAddProduct, onAddCategories }) {
         <Input
           type="text"
           name="carbohydrates"
+          id="carbohydrates"
           placeholder="Carbohydrates per 100g"
         />
 
         <ScreenReaderOnlyLabel htmlFor="fiber">
           Fiber per 100g
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="fiber" placeholder="Fiber per 100g" />
+        <Input
+          type="text"
+          name="fiber"
+          id="fiber"
+          placeholder="Fiber per 100g"
+        />
 
         <ScreenReaderOnlyLabel htmlFor="protein">
           Protein per 100g
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="protein" placeholder="Protein per 100g" />
+        <Input
+          type="text"
+          name="protein"
+          id="protein"
+          placeholder="Protein per 100g"
+        />
 
         <ScreenReaderOnlyLabel htmlFor="categories">
           Categories
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="categories" placeholder="Enter categories.." />
+        <Input
+          type="text"
+          name="categories"
+          id="categories"
+          placeholder="Enter categories.."
+        />
 
         <Button>Submit</Button>
       </Form>

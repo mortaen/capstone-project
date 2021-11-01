@@ -34,13 +34,14 @@ function RecipeForm({ onAddRecipe }) {
         </IconContext.Provider>
         Add Recipe
       </Heading>
-      <Form onSubmit={event => handleSubmit(event)}>
+      <Form onSubmit={handleSubmit}>
         <ScreenReaderOnlyLabel htmlFor="recipeName">
           Recipe Name
         </ScreenReaderOnlyLabel>
         <Input
           type="text"
           name="recipeName"
+          id="recipeName"
           placeholder="Enter recipe name.."
           required
         />
@@ -51,6 +52,7 @@ function RecipeForm({ onAddRecipe }) {
         <Input
           type="text"
           name="instructions"
+          id="instructions"
           placeholder="Enter instructions.."
         />
 
@@ -60,13 +62,19 @@ function RecipeForm({ onAddRecipe }) {
         <Input
           type="text"
           name="ingredients"
+          id="ingredients"
           placeholder="Enter Ingredients here.."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
           Image Url
         </ScreenReaderOnlyLabel>
-        <Input type="text" name="imgUrl" placeholder="Enter img url.." />
+        <Input
+          type="text"
+          name="imgUrl"
+          id="imgUrl"
+          placeholder="Enter img url.."
+        />
 
         <Button>Submit</Button>
       </Form>
