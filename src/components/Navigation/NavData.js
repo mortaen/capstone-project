@@ -4,7 +4,7 @@ import { BiFoodMenu } from 'react-icons/bi'
 
 export const NavData = [
   {
-    title: 'Home/Products',
+    title: 'Products',
     path: '/',
     icon: <AiOutlineHome />,
     id: 1,

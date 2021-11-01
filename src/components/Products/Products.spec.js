@@ -2,6 +2,13 @@ import { render, screen } from '@testing-library/react'
 import Products from './Products'
 import { MemoryRouter as Router } from 'react-router-dom'
 
+const exampleRatings = [
+  {
+    id: '1',
+    rating: 4,
+  },
+]
+
 const exampleData = [
   {
     name: 'Oatly Haferdrink Barista Edition',
@@ -13,42 +20,24 @@ const exampleData = [
   },
 ]
 
-const exampleFilterCategories = [
-  'plant milk',
-  'plant yoghurt',
-  'meat alternative',
-]
-
-const exampleRatings = [
-  {
-    id: '1',
-    rating: 4,
-  },
-]
-
 describe('Products', () => {
   const mockOnCategoryClick = jest.fn()
 
   it('renders CardList and page title', () => {
     render(
       <Router>
-        <Products
-          shownData={exampleData}
-          onCategoryClick={mockOnCategoryClick}
-          filterCategories={exampleFilterCategories}
-          ratings={exampleRatings}
-        />
+        <Products productData={exampleData} ratings={exampleRatings} />
       </Router>
     )
 
     const products = screen.getByRole('list')
     expect(products).toBeInTheDocument()
 
-    const filterButton = screen.getByRole('button', { name: 'show filters' })
-    expect(filterButton).toBeInTheDocument()
+    const filterIcon = screen.getByLabelText('show filters')
+    expect(filterIcon).toBeInTheDocument()
 
-    const showAllButton = screen.getByRole('button', { name: 'show all' })
-    expect(showAllButton).toBeInTheDocument()
+    const showAllIcon = screen.getByLabelText('show all')
+    expect(showAllIcon).toBeInTheDocument()
 
     const pageTitle = screen.getByText('Products')
     expect(pageTitle).toBeInTheDocument()

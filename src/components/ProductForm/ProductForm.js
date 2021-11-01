@@ -3,99 +3,9 @@ import { IconContext } from 'react-icons/lib'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
+import { AiOutlineForm } from 'react-icons/ai'
 
 function ProductForm({ onAddProduct, onAddCategories }) {
-  return (
-    <>
-      <IconContext.Provider value={{ color: '#1f2933', size: '40px' }}>
-        <CustomLink path="/" name="" icon={<MdNavigateBefore />} />
-      </IconContext.Provider>
-      <Heading>Add your product</Heading>
-      <Form onSubmit={event => handleSubmit(event)}>
-        <Label>
-          <Span>Product Name:</Span>
-          <input
-            type="text"
-            name="productName"
-            placeholder="Enter product name.."
-            required
-          />
-        </Label>
-
-        <Label>
-          <Span>Brand:</Span>
-          <input
-            type="text"
-            name="brand"
-            id="brand"
-            placeholder="Specify brand.."
-          />
-        </Label>
-
-        <Label>
-          <Span>Image Url:</Span>
-          <input type="text" name="imgUrl" placeholder="Enter img url.." />
-        </Label>
-
-        <Label>
-          <Span>Description:</Span>
-          <input
-            type="text"
-            name="description"
-            placeholder="Describe the product.."
-          />
-        </Label>
-
-        <Label>
-          <Span>Stores:</Span>
-          <input
-            type="text"
-            name="stores"
-            placeholder="Where can you buy it?"
-          />
-        </Label>
-
-        <Label>
-          Price:
-          <input type="number" step="any" name="price" />
-        </Label>
-        <Label>
-          Ingredients:
-          <input type="text" name="ingredients" />
-        </Label>
-        <Label>
-          Energy per 100g
-          <input type="text" name="energy" />
-        </Label>
-        <Label>
-          Fats per 100g
-          <input type="text" name="fats" />
-        </Label>
-        <Label>
-          Carbohydrates per 100g
-          <input type="text" name="carbohydrates" />
-        </Label>
-        <Label>
-          Fiber per 100g
-          <input type="text" name="fiber" />
-        </Label>
-        <Label>
-          Protein per 100g
-          <input type="text" name="protein" />
-        </Label>
-        <Label>
-          <Span>Categories:</Span>
-          <input
-            type="text"
-            name="categories"
-            placeholder="Enter categories.."
-          />
-        </Label>
-        <button>Submit</button>
-      </Form>
-    </>
-  )
-
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
@@ -137,6 +47,115 @@ function ProductForm({ onAddProduct, onAddCategories }) {
     form.reset()
     productName.focus()
   }
+
+  return (
+    <>
+      <IconContext.Provider value={{ color: '#2f4858', size: '3rem' }}>
+        <CustomLink path="/" name="" icon={<MdNavigateBefore />} />
+      </IconContext.Provider>
+      <Heading>
+        <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
+          <StyledAiOutlineForm />
+        </IconContext.Provider>{' '}
+        Add Products
+      </Heading>
+      <Form onSubmit={event => handleSubmit(event)}>
+        <Label>
+          <ScreenReaderOnly>Product Name</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="productName"
+            placeholder="Enter product name.."
+            required
+          />
+        </Label>
+
+        <Label>
+          <ScreenReaderOnly>Brand</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="brand"
+            id="brand"
+            placeholder="Specify brand.."
+          />
+        </Label>
+
+        <Label>
+          <ScreenReaderOnly>Image Url</ScreenReaderOnly>
+          <Input type="text" name="imgUrl" placeholder="Enter img url.." />
+        </Label>
+
+        <Label>
+          <ScreenReaderOnly>Description</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="description"
+            placeholder="Describe the product.."
+          />
+        </Label>
+
+        <Label>
+          <ScreenReaderOnly>Stores</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="stores"
+            placeholder="Where can you buy it?"
+          />
+        </Label>
+
+        <Label>
+          <ScreenReaderOnly>Price</ScreenReaderOnly>
+          <Input
+            type="number"
+            step="any"
+            name="price"
+            placeholder="Enter price here.."
+          />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Ingredients</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="ingredients"
+            placeholder="Enter Ingredients here.."
+          />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Energy per 100g</ScreenReaderOnly>
+          <Input type="text" name="energy" placeholder="Energy per 100g" />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Fats per 100g</ScreenReaderOnly>
+          <Input type="text" name="fats" placeholder="Fats per 100g" />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Carbohydrates per 100g</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="carbohydrates"
+            placeholder="Carbohydrates per 100g"
+          />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Fiber per 100g</ScreenReaderOnly>
+          <Input type="text" name="fiber" placeholder="Fiber per 100g" />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Protein per 100g</ScreenReaderOnly>
+          <Input type="text" name="protein" placeholder="Protein per 100g" />
+        </Label>
+        <Label>
+          <ScreenReaderOnly>Categories</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="categories"
+            placeholder="Enter categories.."
+          />
+        </Label>
+        <Button>Submit</Button>
+      </Form>
+    </>
+  )
 }
 
 const Form = styled.form`
@@ -146,15 +165,52 @@ const Form = styled.form`
 `
 
 const Label = styled.label`
-  width: 90%;
+  width: 100%;
+`
+
+const Input = styled.input`
+  width: 80%;
+  min-height: 2rem;
+  margin: 1rem 0 0 2rem;
+  border-radius: 0.3rem;
 `
 
 const Heading = styled.h2`
   text-align: center;
+  color: #2f4858;
+  font-size: 2rem;
+  margin: 0;
 `
 
-const Span = styled.span`
-  display: none;
+const Button = styled.button`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
+  width: fit-content;
+  justify-self: center;
+  margin-top: 1rem;
+`
+
+const StyledAiOutlineForm = styled(AiOutlineForm)`
+  display: inline-flex;
+  vertical-align: -8%;
+`
+
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `
 
 export default ProductForm

@@ -16,7 +16,7 @@ describe('NavButton', () => {
     const ListItem = screen.getByText('Add Product')
     expect(ListItem).toBeInTheDocument()
 
-    const ListItem2 = screen.getByText('Home/Products')
+    const ListItem2 = screen.getByText('Products')
     expect(ListItem2).toBeInTheDocument()
   })
 })

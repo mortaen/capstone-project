@@ -51,11 +51,13 @@ const Wrapper = styled.section`
     'instructions instructions'
     'button button';
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 0.6rem;
   padding: 1rem;
-  margin: 10px;
+  margin: 0.6rem;
   text-decoration: none;
   color: inherit;
+
+  background-color: white;
 `
 
 const InfoWrapper = styled.div`
@@ -105,12 +107,13 @@ const Item = styled.span``
 
 const Paragraph = styled.p`
   margin: 0;
+  padding: 0.5rem 0;
 `
 
 const Button = styled.button`
   grid-area: button;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   background-image: linear-gradient(
     45deg,
@@ -118,6 +121,7 @@ const Button = styled.button`
     #fad0c4 99%,
     #fad0c4 100%
   );
+  color: #2f4858;
   width: fit-content;
   justify-self: center;
 `
