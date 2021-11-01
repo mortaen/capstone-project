@@ -63,7 +63,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="ingredients"
           id="ingredients"
-          placeholder="Enter Ingredients here.."
+          placeholder="Enter ingredients.."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
