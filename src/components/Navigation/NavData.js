@@ -21,4 +21,10 @@ export const NavData = [
     icon: <BiFoodMenu />,
     id: 3,
   },
+  {
+    title: 'Add Recipe',
+    path: '/recipe-form',
+    icon: <AiOutlineForm />,
+    id: 4,
+  },
 ]
