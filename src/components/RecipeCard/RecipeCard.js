@@ -35,7 +35,7 @@ function RecipeCard({ name, ingredients, instructions, image, links }) {
           </Section>
         )}
       </DetailsWrapper>
-      <Button onClick={() => handleDetailsButtonClick()}>
+      <Button onClick={handleDetailsButtonClick}>
         show {showDetails ? 'less' : 'more'}
       </Button>
     </Wrapper>
