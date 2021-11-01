@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { IconContext } from 'react-icons/lib'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
@@ -14,6 +15,10 @@ function DetailsPage({
   categories,
   price,
 }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <IconContext.Provider value={{ color: '#2f4858', size: '3rem' }}>
@@ -38,7 +43,6 @@ function DetailsPage({
         <Item>Energie: {nutritionFacts.energy}</Item>
         <Item>Fette: {nutritionFacts.fats}</Item>
         <Item>Kohlenhydrate: {nutritionFacts.carbohydrates}</Item>
-        <Item>Protein: {nutritionFacts.protein}</Item>
         <Item>Ballaststoffe: {nutritionFacts.fiber}</Item>
         <Item>Proteine: {nutritionFacts.protein}</Item>
       </Section>
@@ -99,6 +103,8 @@ const Description = styled.p`
   background-color: white;
 `
 
-const Item = styled.span``
+const Item = styled.span`
+  overflow: auto;
+`
 
 export default DetailsPage
