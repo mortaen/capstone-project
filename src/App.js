@@ -4,10 +4,12 @@ import ProductRoute from './components/DetailsPage/ProductRoute'
 import Navigation from './components/Navigation/Navigation'
 import ProductForm from './components/ProductForm/ProductForm'
 import Products from './components/Products/Products'
+import RecipeForm from './components/RecipeForm/RecipeForm'
 import Recipes from './components/Recipes/Recipes'
 import useCategories from './hooks/useCategories'
 import useProduct from './hooks/useProduct'
 import useRating from './hooks/useRating'
+import useRecipe from './hooks/useRecipe'
 
 function App({ initialProductData, initialRecipeData }) {
   const { handleAddCategories } = useCategories()
@@ -18,6 +20,8 @@ function App({ initialProductData, initialRecipeData }) {
     initialProductData,
     handleAddRating,
   })
+
+  const { recipeData, handleAddRecipe } = useRecipe({ initialRecipeData })
 
   return (
     <Router>
@@ -39,7 +43,10 @@ function App({ initialProductData, initialRecipeData }) {
           <ProductRoute productData={productData} />
         </Route>
         <Route exact path="/recipes">
-          <Recipes recipeData={initialRecipeData} />
+          <Recipes recipeData={recipeData} />
+        </Route>
+        <Route exact path="/recipe-form">
+          <RecipeForm onAddRecipe={handleAddRecipe} />
         </Route>
         <Route>404 NOT FOUND</Route>
       </Switch>
