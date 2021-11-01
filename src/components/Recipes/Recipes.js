@@ -1,6 +1,9 @@
 import RecipeCard from '../RecipeCard/RecipeCard'
-import { BiFoodMenu } from 'react-icons/bi'
 import styled from 'styled-components/macro'
+import CustomLink from '../CustomLink/CustomLink'
+import { IconContext } from 'react-icons/lib'
+import { MdAdd } from 'react-icons/md'
+import { BiFoodMenu } from 'react-icons/bi'
 
 function Recipes({ recipeData }) {
   return (
@@ -9,6 +12,15 @@ function Recipes({ recipeData }) {
         <StyledBiFoodMenu /> Recipes
       </Heading>
       <CardList>
+        <Section>
+          <IconContext.Provider value={{ color: '#fad0c4', size: '2rem' }}>
+            <CustomLink
+              path="/recipe-form"
+              aria-label="add item"
+              icon={<MdAdd />}
+            />
+          </IconContext.Provider>
+        </Section>
         {recipeData.map(recipe => (
           <RecipeCard
             name={recipe.name}
@@ -45,6 +57,12 @@ const Heading = styled.h2`
 const StyledBiFoodMenu = styled(BiFoodMenu)`
   display: inline-flex;
   vertical-align: -8%;
+`
+
+const Section = styled.section`
+  background-color: #2f4858;
+  display: flex;
+  justify-content: space-around;
 `
 
 export default Recipes
