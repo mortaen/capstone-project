@@ -12,12 +12,11 @@ import useSearch from '../../hooks/useSearch'
 import CustomLink from '../CustomLink/CustomLink'
 import Filter from '../Filter/Filter'
 import ProductCard from '../ProductCard/ProductCard'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 import Search from '../Search/Search'
 
 function Products({ onAddRating, ratings, productData }) {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  ScrollToTop()
 
   const history = useHistory()
 

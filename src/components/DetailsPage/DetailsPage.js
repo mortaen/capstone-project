@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
 import { IconContext } from 'react-icons/lib'
 import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function DetailsPage({
   name,
@@ -15,9 +15,7 @@ function DetailsPage({
   categories,
   price,
 }) {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  ScrollToTop()
 
   return (
     <>

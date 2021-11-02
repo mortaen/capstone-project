@@ -4,12 +4,10 @@ import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 import { AiOutlineForm } from 'react-icons/ai'
-import { useEffect } from 'react'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function RecipeForm({ onAddRecipe }) {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  ScrollToTop()
 
   function handleSubmit(event) {
     event.preventDefault()
