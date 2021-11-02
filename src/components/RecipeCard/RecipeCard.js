@@ -88,11 +88,7 @@ const Section = styled.section`
   margin-bottom: 8px;
   max-height: 45vh;
   overflow: auto;
-  ${({ showDetails }) =>
-    showDetails &&
-    `
-          max-height: none;
-        `};
+  ${({ showDetails }) => showDetails && `max-height: none;`};
 `
 
 const StyledLink = styled(Link)`
