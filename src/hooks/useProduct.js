@@ -40,7 +40,6 @@ export default function useProduct({ initialProductData, handleAddRating }) {
     const categoriesArray = categories.split(',').map(item => item.trim())
 
     const addProduct = [
-      ...productData,
       {
         name: productName,
         brand: brand,
@@ -53,6 +52,7 @@ export default function useProduct({ initialProductData, handleAddRating }) {
         price: price,
         id: id,
       },
+      ...productData,
     ]
     setProductData(addProduct)
 
