@@ -28,11 +28,11 @@ export default function useProduct({ initialProductData, handleAddRating }) {
     const ingredientsArray = ingredients.split(',').map(item => item.trim())
 
     const nutritionFactsObject = {
-      energy: energy,
-      fats: fats,
-      carbohydrates: carbohydrates,
-      fiber: fiber,
-      protein: protein,
+      energy,
+      fats,
+      carbohydrates,
+      fiber,
+      protein,
     }
 
     const storesArray = stores.split(',').map(item => item.trim())
@@ -44,13 +44,13 @@ export default function useProduct({ initialProductData, handleAddRating }) {
         name: productName,
         brand: brand,
         image: imgUrl,
-        description: description,
+        description,
         ingredients: ingredientsArray,
         stores: storesArray,
         nutritionFacts: nutritionFactsObject,
         categories: categoriesArray,
-        price: price,
-        id: id,
+        price,
+        id,
       },
       ...productData,
     ]

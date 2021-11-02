@@ -21,10 +21,10 @@ export default function useRecipe({ initialRecipeData }) {
     const addRecipe = [
       {
         name: recipeName,
-        instructions: instructions,
+        instructions,
         ingredients: ingredientsArray,
         image: imgUrl,
-        id: id,
+        id,
       },
       ...recipeData,
     ]
