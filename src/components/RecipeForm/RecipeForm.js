@@ -47,7 +47,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="recipeName"
           id="recipeName"
-          placeholder="Enter recipe name.."
+          placeholder="Enter recipe name..."
           required
         />
 
@@ -58,7 +58,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="instructions"
           id="instructions"
-          placeholder="Enter instructions.."
+          placeholder="Enter instructions..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="ingredients">
@@ -68,7 +68,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="ingredients"
           id="ingredients"
-          placeholder="Enter ingredients.."
+          placeholder="Enter ingredients..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
@@ -78,7 +78,7 @@ function RecipeForm({ onAddRecipe }) {
           type="url"
           name="imgUrl"
           id="imgUrl"
-          placeholder="Enter img url.."
+          placeholder="Enter img url..."
         />
 
         <Button>Submit</Button>

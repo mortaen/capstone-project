@@ -74,7 +74,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="productName"
           id="productName"
-          placeholder="Enter product name.."
+          placeholder="Enter product name..."
           required
         />
 
@@ -83,7 +83,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="brand"
           id="brand"
-          placeholder="Specify brand.."
+          placeholder="Specify brand..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
@@ -93,7 +93,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="url"
           name="imgUrl"
           id="imgUrl"
-          placeholder="Enter img url.."
+          placeholder="Enter img url..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="description">
@@ -103,7 +103,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="description"
           id="description"
-          placeholder="Describe the product.."
+          placeholder="Describe the product..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="stores">Stores</ScreenReaderOnlyLabel>
@@ -120,7 +120,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           step="any"
           name="price"
           id="price"
-          placeholder="Enter price here.."
+          placeholder="Enter price here..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="ingredients">
@@ -130,7 +130,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="ingredients"
           id="ingredients"
-          placeholder="Enter ingredients.."
+          placeholder="Enter ingredients..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="energy">
@@ -185,7 +185,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="categories"
           id="categories"
-          placeholder="Enter categories.."
+          placeholder="Enter categories..."
         />
 
         <Button>Submit</Button>
