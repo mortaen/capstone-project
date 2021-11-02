@@ -4,6 +4,8 @@ This app is a database for all the foods you have tried or want to try.
 
 ![Screenshots1](screenshots1.png)
 
+![gif](capstone_compressed.gif)
+
 ![Screenshots2](screenshots2.png)
 
 ## Description
@@ -26,6 +28,9 @@ The app is currently deployed with vercel. Click this link if you want to try it
 - React Testing Library / Jest
 - localStorage
 - Storybook
+- npm
+- Vercel
+- lodash.debounce
 
 ## Project Setup
 
