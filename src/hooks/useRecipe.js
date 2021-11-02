@@ -19,14 +19,14 @@ export default function useRecipe({ initialRecipeData }) {
     const ingredientsArray = ingredients.split(',').map(item => item.trim())
 
     const addRecipe = [
-      ...recipeData,
       {
         name: recipeName,
-        instructions: instructions,
+        instructions,
         ingredients: ingredientsArray,
         image: imgUrl,
-        id: id,
+        id,
       },
+      ...recipeData,
     ]
 
     setRecipeData(addRecipe)

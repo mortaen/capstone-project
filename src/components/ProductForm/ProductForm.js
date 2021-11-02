@@ -4,8 +4,11 @@ import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 import { AiOutlineForm } from 'react-icons/ai'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function ProductForm({ onAddProduct, onAddCategories }) {
+  ScrollToTop()
+
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
@@ -53,12 +56,14 @@ function ProductForm({ onAddProduct, onAddCategories }) {
       <IconContext.Provider value={{ color: '#2f4858', size: '3rem' }}>
         <CustomLink path="/" name="" icon={<MdNavigateBefore />} />
       </IconContext.Provider>
+
       <Heading>
         <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
           <StyledAiOutlineForm />
         </IconContext.Provider>
         Add Product
       </Heading>
+
       <Form onSubmit={handleSubmit}>
         <ScreenReaderOnlyLabel htmlFor="productName">
           Product Name
@@ -67,7 +72,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="productName"
           id="productName"
-          placeholder="Enter product name.."
+          placeholder="Enter product name..."
           required
         />
 
@@ -76,17 +81,17 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="brand"
           id="brand"
-          placeholder="Specify brand.."
+          placeholder="Specify brand..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
           Image Url
         </ScreenReaderOnlyLabel>
         <Input
-          type="text"
+          type="url"
           name="imgUrl"
           id="imgUrl"
-          placeholder="Enter img url.."
+          placeholder="Enter img url..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="description">
@@ -96,7 +101,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="description"
           id="description"
-          placeholder="Describe the product.."
+          placeholder="Describe the product..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="stores">Stores</ScreenReaderOnlyLabel>
@@ -113,7 +118,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           step="any"
           name="price"
           id="price"
-          placeholder="Enter price here.."
+          placeholder="Enter price here..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="ingredients">
@@ -123,7 +128,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="ingredients"
           id="ingredients"
-          placeholder="Enter ingredients.."
+          placeholder="Enter ingredients..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="energy">
@@ -178,7 +183,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           type="text"
           name="categories"
           id="categories"
-          placeholder="Enter categories.."
+          placeholder="Enter categories..."
         />
 
         <Button>Submit</Button>

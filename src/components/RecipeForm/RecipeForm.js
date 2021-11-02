@@ -4,8 +4,11 @@ import { MdNavigateBefore } from 'react-icons/md'
 import styled from 'styled-components/macro'
 import CustomLink from '../CustomLink/CustomLink'
 import { AiOutlineForm } from 'react-icons/ai'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function RecipeForm({ onAddRecipe }) {
+  ScrollToTop()
+
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
@@ -42,7 +45,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="recipeName"
           id="recipeName"
-          placeholder="Enter recipe name.."
+          placeholder="Enter recipe name..."
           required
         />
 
@@ -53,7 +56,7 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="instructions"
           id="instructions"
-          placeholder="Enter instructions.."
+          placeholder="Enter instructions..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="ingredients">
@@ -63,17 +66,17 @@ function RecipeForm({ onAddRecipe }) {
           type="text"
           name="ingredients"
           id="ingredients"
-          placeholder="Enter ingredients.."
+          placeholder="Enter ingredients..."
         />
 
         <ScreenReaderOnlyLabel htmlFor="imgUrl">
           Image Url
         </ScreenReaderOnlyLabel>
         <Input
-          type="text"
+          type="url"
           name="imgUrl"
           id="imgUrl"
-          placeholder="Enter img url.."
+          placeholder="Enter img url..."
         />
 
         <Button>Submit</Button>

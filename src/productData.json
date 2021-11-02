@@ -96,5 +96,157 @@
     "image": "https://img.rewe-static.de/8403429/30699050_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
     "categories": ["meat alternative"],
     "price": "2.99"
+  },
+  {
+    "name": "Alpro Mandel-Drink Ohne Zucker",
+    "id": "4",
+    "brand": "Alpro",
+    "description": "Der ungesüßte Alpro Mandeldrink ist für alle Mandel-Liebhaber, die auf Zucker verzichten möchten. Er zeichnet sich durch den puren Geschmack gerösteter Mandeln aus, bei dem die raffinierten Röstnoten besonders zur Geltung kommen. Ganz ohne Zucker entfaltet der Alpro Mandeldrink Ungesüßt seine feinen Noten im Müsli, Smoothie oder auch beim Backen und Kochen. Ein köstlich purer Mandelgenuss!",
+    "ingredients": [
+      "Wasser",
+      "MANDELN",
+      "Tricalciumphosphat",
+      "Meersalz",
+      "Johannisbrotkernmehl",
+      "Gellan",
+      "Sonnenblumenlecithine",
+      "Vitamin B2",
+      "Vitamin B12",
+      "Vitamin E",
+      "Vitamin D2"
+    ],
+    "nutritionFacts": {
+      "energy": "13 kcal",
+      "fats": "1.1g",
+      "carbohydrates": "0g",
+      "fiber": "0.3g",
+      "protein": "0.4g"
+    },
+    "stores": ["Rewe"],
+    "image": "https://img.rewe-static.de/2045445/22777282_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
+    "categories": ["plant milk"],
+    "price": "2.79"
+  },
+  {
+    "name": "Alpro Soja-Joghurt Heidelbeere",
+    "id": "5",
+    "brand": "Alpro",
+    "description": "Winzige Beere - große Geschmacksexplosion. Alpro Heidelbeere verwöhnt Sie mit dezenter Süße und ganz viel Geschmack. Der mild-säuerliche Geschmack von frisch gepflückten Heidelbeeren macht die Alpro Soja-Joghurtalternative unwiderstehlich - und das auf ganz natürliche Weise. Verwendet werden selbstverständlich nur die besten Heidelbeeren. ",
+    "ingredients": [
+      "Wasser",
+      "geschälte SOJABOHNEN",
+      "Zucker",
+      "Heidelbeere",
+      "Tricalciumcitrat",
+      "Pektine",
+      "Citronensäure",
+      "Natriumcitrate",
+      "natürliches Aroma",
+      "Heidelbeerextrakt",
+      "Karottenextrakt",
+      "Meersalz",
+      "Antioxidationsmittel",
+      "Vitamin B2",
+      "Vitamin B12",
+      "Vitamin D2",
+      "Joghurtkulturen"
+    ],
+    "nutritionFacts": {
+      "energy": "70 kcal",
+      "fats": "2.2g",
+      "carbohydrates": "8.2g",
+      "fiber": "1g",
+      "protein": "3.7g"
+    },
+    "stores": ["Rewe"],
+    "image": "https://img.rewe-static.de/0367084/30436275_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
+    "categories": ["plant yoghurt"],
+    "price": "1.89"
+  },
+  {
+    "name": "LikeMeat Bio Like Chicken vegan",
+    "id": "6",
+    "brand": "LikeMeat",
+    "description": "Die Filetstücke Hähnchen-Art mit ihrem saftigen Biss und der authentischen Würzung sind eine absolute Bereicherung in jeder Küche. Sie sind komplett aus Bio-Zutaten und gelingen garantiert immer: Zum Beispiel einfach als eiweißreiches Topping auf dem Low-Carb Salat.",
+    "ingredients": [
+      "Wasser",
+      "SOJAPROTEINKONZENTRAT",
+      "Sonnenblumenöl",
+      "natürliches Aroma",
+      "Salz",
+      "Maltodextrin",
+      "Paprika",
+      "Pfeffer",
+      "Ingwer",
+      "Zwiebeln",
+      "Muskatnuss",
+      "Muskatblüte",
+      "Kardamom",
+      "Knoblauch"
+    ],
+    "nutritionFacts": {
+      "energy": "114 kcal",
+      "fats": "2.2g",
+      "carbohydrates": "1.4g",
+      "fiber": "6.1g",
+      "protein": "18g"
+    },
+    "stores": ["Rewe"],
+    "image": "https://img.rewe-static.de/2953716/25869371_digital-image.png?output-quality=60&fit=inside|840:840&output-format=image/webp&background-color=ffffff",
+    "categories": ["meat alternative"],
+    "price": "2.99"
+  },
+  {
+    "name": "Oatly Hafer Cuisine zum Kochen",
+    "id": "7",
+    "brand": "Oatly",
+    "description": "Oatly Hafer Cuisine zum Kochen 250ml, frei von Nüssen, Milch und Soja sowie GVO-frei",
+    "ingredients": [
+      "Wasser",
+      "Rapsöl",
+      "Hafer",
+      "Emulgator (E472e)",
+      "Stabilisator (E415)",
+      "Salz",
+      "Kaliumiodid"
+    ],
+    "nutritionFacts": {
+      "energy": "150 kcal",
+      "fats": "13g",
+      "carbohydrates": "5.8g",
+      "fiber": "0.8g",
+      "protein": "0.9g"
+    },
+    "stores": ["Rewe"],
+    "image": "https://img.rewe-static.de/8405244/31160674_digital-image.png?output-quality=60&fit=inside|1680:1680&output-format=image/webp&background-color=ffffff",
+    "categories": ["plant cream"],
+    "price": "0.99"
+  },
+  {
+    "name": "Alpro Soja-Kochcrème",
+    "id": "8",
+    "brand": "Alpro",
+    "description": "Kulinarische Creme aus Soja. Ohne Calcium, gesüßt.",
+    "ingredients": [
+      "Wasser",
+      "SOJABOHNEN",
+      "Sonnenblumenöl",
+      "Zucker",
+      "Zuckerester von Speisefettsäuren",
+      "Stabilisatoren",
+      "Meersalz",
+      "Aroma"
+    ],
+    "nutritionFacts": {
+      "energy": "142 kcal",
+      "fats": "14g",
+      "carbohydrates": "1.2g",
+      "fiber": "0.6g",
+      "protein": "2g"
+    },
+    "stores": ["Rewe"],
+    "image": "https://img.rewe-static.de/3640922/3838740_digital-image.png?output-quality=60&fit=inside|1680:1680&output-format=image/webp&background-color=ffffff",
+    "categories": ["plant cream"],
+    "price": "0.99"
   }
 ]

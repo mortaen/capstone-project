@@ -4,8 +4,11 @@ import CustomLink from '../CustomLink/CustomLink'
 import { IconContext } from 'react-icons/lib'
 import { MdAdd } from 'react-icons/md'
 import { BiFoodMenu } from 'react-icons/bi'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function Recipes({ recipeData }) {
+  ScrollToTop()
+
   return (
     <Wrapper>
       <Heading>

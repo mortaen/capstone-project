@@ -1,7 +1,12 @@
 import { useState } from 'react'
 
 export default function useCategories() {
-  const initialCategories = ['plant milk', 'plant yoghurt', 'meat alternative']
+  const initialCategories = [
+    'plant milk',
+    'plant yoghurt',
+    'meat alternative',
+    'plant cream',
+  ]
 
   const [productCategories, setProductCategories] = useState(() => {
     if (localStorage.getItem('categoriesLocalStorage')) {

@@ -1,72 +1,41 @@
-# capstone-project
+# Capstone project
 
-# Getting Started with Create React App
+This app is a database for all the foods you have tried or want to try.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshots1](screenshots1.png)
 
-## Available Scripts
+![gif](capstone_compressed.gif)
 
-In the project directory, you can run:
+![Screenshots2](screenshots2.png)
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is my capstone project for neuefische web development bootcamp.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Have you ever stood in front of a product at your local grocery store and asked yourself if you've tried that product before and if you did, whether you actually liked it?
+This is where this app comes in: save your favorite (and least favorite) food products with a rating along with some recipes, so the next time you ask yourself whether you actually liked that product, you know where to find the answer.
 
-### `npm test`
+## Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app is currently deployed with vercel. Click this link if you want to try it out: https://capstone-project-git-recipe-form-mortaen.vercel.app/.
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- React Router
+- React Custom Hooks
+- Styled-Components
+- React Testing Library / Jest
+- localStorage
+- Storybook
+- npm
+- Vercel
+- lodash.debounce
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clone this repository
+- Install all the dependencies via `$ npm install`
+- Run the app on your local machine using `$ npm run start`
+- Run tests via `$ npm run test`
+- Run Storybook via `$ npm run storybook`

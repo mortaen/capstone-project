@@ -19,5 +19,52 @@
         "path": "/product-details/2"
       }
     ]
+  },
+  {
+    "name": "Vegane Pasta Carbonara",
+    "id": "2",
+    "ingredients": [
+      "80-100g ungekochte Pasta",
+      "1 Zwiebel",
+      "1 Handvoll Shiitake Pilze",
+      "2 TL gehackter Knoblauch",
+      "1 Handvoll Zucchini",
+      "Petersilie zum garnieren",
+      "Veganer Parmesan",
+      "50g Cashewkerne",
+      "200 ml ungesüßte Pflanzenmilch",
+      "1 Prise Salz",
+      "1 Prise Pfeffer",
+      "1-2 EL flüssiges Raucharoma",
+      "3 EL Hefeflocken"
+    ],
+    "instructions": "Weiche die Cashewkerne in kochendem Wasser für 10 Minuten auf. Koche die Pasta mit einem Schuss Olivenöl und einer Prise Salz. Gib die Zutaten für die Sauce in einen Mixer und mixe sie bis sie cremig sind. Dünste die Zwiebel und den Knoblauch bei mittlerer Hitze für 2 Minuten in einer Pfanne mit etwas Olivenöl. Füge anschließend die Pilze und die Zucchini hinzu und drehe nach 2 weiteren Minuten die Hitze herunter. Gieße nun die Pasta ab und gib sie zusammen mit der Carbonarasauce bei geringer Hitze in die Pfanne. Erhitze alles zusammen für weitere 2 Minuten. Fertig!",
+    "image": "https://www.theeasyvegan.org/wp-content/uploads/2017/01/15-minute-vegan-carbonara-creamy-bacony2.jpg",
+    "links": [
+      {
+        "name": "Alpro Mandel-Drink Ohne Zucker",
+        "path": "/product-details/4"
+      }
+    ]
+  },
+  {
+    "name": "Vegane Mac and Cheese",
+    "id": "3",
+    "ingredients": [
+      "250 g Makkaroni",
+      "225 g Kartoffeln",
+      "55 g Karotten",
+      "50 g Zwiebeln",
+      "75 g Cashew-Kerne",
+      "2 Esslöffel Hefeflocken",
+      "1 Esslöffel Zitronensaft",
+      "1 Teelöffel Salz",
+      "1/4 Teelöffel Knoblauchpulver",
+      "1 Prise Cayenne-Pfeffer",
+      "1 Prise Paprika-Gewürz"
+    ],
+    "instructions": "Makkaroni nach Packungsanweisung al dente kochen. Kartoffeln, Karotten und Zwiebeln würfeln. Wasser zum Kochen bringen und Gemüse bei mittlerer Temperatur etwa 10 Minuten lang köcheln, bis die Würfel weich genug für den Hochleistungsmixer sind. Das Gemüse mit einem Schaumlöffel aus dem Wasser entfernen und in den Hochleistungsmixer geben. 180 ml des Wassers hinzugeben und mit den übrigen Zutaten zu einer glatten Masse mixen. Soße mit den Gewürzen abschmecken, über die gekochten Nudeln geben und sofort servieren.",
+    "image": "https://d12xickik43a9a.cloudfront.net/images/magazine/de/M90754-Vegane-Kaesesauce-fuer-MacnCheese_90507-Q75-750.jpg",
+    "links": []
   }
 ]

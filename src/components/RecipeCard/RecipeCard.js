@@ -14,7 +14,7 @@ function RecipeCard({ name, ingredients, instructions, image, links }) {
       <Image src={image} alt="" />
       <InfoWrapper>
         <Heading>{name}</Heading>
-        <Section>
+        <Section showDetails={showDetails}>
           <Subheading>Zutaten</Subheading>
           {ingredients.map(ingredient => (
             <Item key={ingredient}>{ingredient}</Item>
@@ -56,7 +56,6 @@ const Wrapper = styled.section`
   margin: 0.6rem;
   text-decoration: none;
   color: inherit;
-
   background-color: white;
 `
 
@@ -87,6 +86,9 @@ const Section = styled.section`
     'items';
   grid-gap: 5px;
   margin-bottom: 8px;
+  max-height: 45vh;
+  overflow: auto;
+  ${({ showDetails }) => showDetails && `max-height: none;`};
 `
 
 const StyledLink = styled(Link)`

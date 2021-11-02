@@ -15,7 +15,7 @@ export default function useRating() {
     const newRatings = [
       ...otherRatings,
       {
-        id: id,
+        id,
         rating: value,
       },
     ]
