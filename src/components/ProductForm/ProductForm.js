@@ -58,12 +58,14 @@ function ProductForm({ onAddProduct, onAddCategories }) {
       <IconContext.Provider value={{ color: '#2f4858', size: '3rem' }}>
         <CustomLink path="/" name="" icon={<MdNavigateBefore />} />
       </IconContext.Provider>
+
       <Heading>
         <IconContext.Provider value={{ color: '#2f4858', size: '2rem' }}>
           <StyledAiOutlineForm />
         </IconContext.Provider>
         Add Product
       </Heading>
+
       <Form onSubmit={handleSubmit}>
         <ScreenReaderOnlyLabel htmlFor="productName">
           Product Name
@@ -88,7 +90,7 @@ function ProductForm({ onAddProduct, onAddCategories }) {
           Image Url
         </ScreenReaderOnlyLabel>
         <Input
-          type="text"
+          type="url"
           name="imgUrl"
           id="imgUrl"
           placeholder="Enter img url.."

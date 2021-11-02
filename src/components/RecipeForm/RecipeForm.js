@@ -75,7 +75,7 @@ function RecipeForm({ onAddRecipe }) {
           Image Url
         </ScreenReaderOnlyLabel>
         <Input
-          type="text"
+          type="url"
           name="imgUrl"
           id="imgUrl"
           placeholder="Enter img url.."
