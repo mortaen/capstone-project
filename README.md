@@ -17,7 +17,7 @@ This is where this app comes in: save your favorite (and least favorite) food pr
 
 ## Demo
 
-The app is currently deployed with vercel. Click this link if you want to try it out: https://capstone-project-git-recipe-form-mortaen.vercel.app/.
+The app is currently deployed with vercel. Click this link if you want to try it out: http://capstone-project-azure.vercel.app/.
 
 ## Tech Stack
 
